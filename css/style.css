@@ -1,0 +1,447 @@
+/* ============================================
+   KMST コーポレートサイト 共通CSS
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* --- リセット --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #2C2C2C;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { list-style: none; padding: 0; }
+table { border-collapse: collapse; }
+
+/* --- カラー変数 --- */
+:root {
+  --km-red: #E53935;
+  --km-red-dark: #C62828;
+  --km-red-light: #FF6F61;
+  --km-navy: #1A1A2E;
+  --km-navy-light: #2D2D44;
+  --km-text: #2C2C2C;
+  --km-text-light: #6B6B6B;
+  --km-text-muted: #9E9E9E;
+  --km-bg: #FAFAFA;
+  --km-bg-warm: #FFF8F6;
+  --km-white: #fff;
+  --km-border: #E8E8E8;
+  --km-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  --km-shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --km-radius: 12px;
+  --km-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- 共通レイアウト --- */
+.km-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- ヘッダー --- */
+.km-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(232,232,232,0.5);
+  transition: var(--km-transition);
+}
+.km-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.km-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--km-navy);
+  letter-spacing: 2px;
+}
+.km-logo span {
+  color: var(--km-red);
+}
+.km-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.km-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--km-text);
+  transition: var(--km-transition);
+  position: relative;
+}
+.km-nav a:hover {
+  color: var(--km-red);
+}
+.km-nav a.active {
+  color: var(--km-red);
+  font-weight: 700;
+}
+.km-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  background: var(--km-red);
+  color: #fff !important;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--km-transition);
+}
+.km-nav-cta:hover {
+  background: var(--km-red-dark);
+  transform: translateY(-1px);
+}
+
+/* ハンバーガーメニュー */
+.km-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+.km-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--km-navy);
+  transition: var(--km-transition);
+}
+.km-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.km-hamburger.open span:nth-child(2) { opacity: 0; }
+.km-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.km-mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.98);
+  z-index: 999;
+  padding: 100px 32px 32px;
+  flex-direction: column;
+  gap: 0;
+}
+.km-mobile-nav.open { display: flex; }
+.km-mobile-nav a {
+  display: block;
+  padding: 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--km-navy);
+  border-bottom: 1px solid var(--km-border);
+}
+.km-mobile-nav a:last-child { border-bottom: none; }
+.km-mobile-nav .km-nav-cta {
+  margin-top: 24px;
+  text-align: center;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 16px;
+}
+
+/* --- フッター --- */
+.km-footer {
+  background: var(--km-navy);
+  color: #fff;
+  padding: 60px 0 24px;
+}
+.km-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+.km-footer-brand .km-logo {
+  color: #fff;
+  margin-bottom: 16px;
+  display: block;
+}
+.km-footer-brand p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+}
+.km-footer-nav h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: rgba(255,255,255,0.9);
+}
+.km-footer-nav a {
+  display: block;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  padding: 4px 0;
+  transition: var(--km-transition);
+}
+.km-footer-nav a:hover { color: #fff; }
+.km-footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 20px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+.km-footer-bottom a {
+  color: rgba(255,255,255,0.3);
+  transition: var(--km-transition);
+}
+.km-footer-bottom a:hover { color: #fff; }
+
+/* --- セクションヘッダー --- */
+.km-sh { text-align: center; margin-bottom: 60px; }
+.km-sh-en {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--km-red);
+  margin-bottom: 8px;
+}
+.km-sh-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--km-navy);
+  line-height: 1.5;
+}
+.km-sh-line {
+  width: 40px;
+  height: 3px;
+  background: var(--km-red);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* --- ボタン --- */
+.km-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--km-transition);
+  text-decoration: none;
+  border: none;
+}
+.km-btn--red {
+  background: var(--km-red);
+  color: #fff;
+}
+.km-btn--red:hover {
+  background: var(--km-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(229,57,53,0.3);
+}
+.km-btn--white {
+  background: #fff;
+  color: var(--km-red);
+  border: 2px solid #fff;
+}
+.km-btn--white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.3);
+}
+.km-btn--outline {
+  background: transparent;
+  color: var(--km-red);
+  border: 2px solid var(--km-red);
+}
+.km-btn--outline:hover {
+  background: var(--km-red);
+  color: #fff;
+}
+.km-btn--lg {
+  padding: 18px 48px;
+  font-size: 16px;
+}
+
+/* --- チェックマーク --- */
+.km-checks { list-style: none; padding: 0; }
+.km-checks li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.km-checks li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--km-red);
+  font-weight: 700;
+}
+
+/* --- カード共通 --- */
+.km-card {
+  background: #fff;
+  border-radius: var(--km-radius);
+  box-shadow: var(--km-shadow-sm);
+  transition: var(--km-transition);
+  overflow: hidden;
+}
+.km-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--km-shadow);
+}
+
+/* --- サブページヒーロー --- */
+.km-sv-hero {
+  background: linear-gradient(135deg, var(--km-navy) 0%, var(--km-navy-light) 100%);
+  padding: 140px 0 60px;
+  text-align: center;
+  color: #fff;
+}
+.km-sv-hero-en {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+}
+.km-sv-hero h1 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.km-sv-hero h1 em {
+  color: var(--km-red-light);
+  font-style: normal;
+}
+.km-sv-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* --- 固定フッターCTA（モバイル） --- */
+@media (max-width: 768px) {
+  .km-fixed-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+    padding: 12px 16px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 8px;
+  }
+  .km-fixed-cta a {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .km-fixed-cta .km-fc-primary {
+    background: var(--km-red);
+    color: #fff;
+  }
+  .km-fixed-cta .km-fc-secondary {
+    border: 2px solid var(--km-red);
+    color: var(--km-red);
+    background: #fff;
+  }
+  body { padding-bottom: 72px; }
+}
+@media (min-width: 769px) {
+  .km-fixed-cta { display: none; }
+}
+
+/* --- CTA共通 --- */
+.km-cta {
+  background: linear-gradient(135deg, var(--km-red) 0%, #C62828 100%);
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+}
+.km-cta h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+  line-height: 1.5;
+}
+.km-cta-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 36px;
+}
+.km-cta-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.km-cta-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 768px) {
+  body { padding-top: 72px; }
+  .km-sh-title { font-size: 24px; }
+  .km-btn { padding: 14px 28px; font-size: 14px; }
+  .km-btn--lg { padding: 14px 32px; font-size: 14px; }
+  .km-sv-hero { padding: 100px 0 40px; }
+  .km-sv-hero h1 { font-size: 26px; }
+  .km-cta { padding: 60px 0; }
+  .km-cta h2 { font-size: 22px; }
+  .km-cta-btns { flex-direction: column; align-items: center; }
+  .km-cta-btns .km-btn { width: 100%; max-width: 320px; justify-content: center; }
+
+  /* ヘッダー */
+  .km-nav { display: none; }
+  .km-hamburger { display: flex; }
+
+  /* フッター */
+  .km-footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .km-footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (min-width: 769px) {
+  body { padding-top: 72px; }
+}

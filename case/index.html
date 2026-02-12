@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支援実績 | KMST株式会社</title>
+  <meta name="description" content="KMST株式会社の補助金申請支援・AI導入支援の実績をご紹介。IT導入補助金、ものづくり補助金、AI研修など多数の採択実績があります。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+  /* ====================================
+     実績ページ固有CSS
+  ==================================== */
+  .km-works {
+    padding: 80px 0;
+    background: var(--km-bg, #FAFAFA);
+  }
+  .km-works-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .km-work-card {
+    background: #fff;
+    border: 1px solid var(--km-border, #E8E8E8);
+    border-radius: var(--km-radius, 12px);
+    overflow: hidden;
+    transition: var(--km-transition, 0.3s ease);
+  }
+  .km-work-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--km-shadow, 0 8px 30px rgba(0,0,0,0.08));
+    border-color: transparent;
+  }
+  .km-work-thumb {
+    background: linear-gradient(135deg, var(--km-navy, #1A1A2E), var(--km-navy-light, #2D2D44));
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.25);
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+  }
+  .km-work-tags {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .km-work-tag {
+    background: rgba(229,57,53,0.9);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .km-work-body {
+    padding: 24px;
+  }
+  .km-work-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--km-navy, #1A1A2E);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .km-work-meta {
+    font-size: 13px;
+    color: var(--km-text-muted, #9E9E9E);
+    margin-bottom: 16px;
+  }
+  .km-work-amount {
+    display: inline-block;
+    background: var(--km-bg-warm, #FFF8F6);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--km-red, #E53935);
+  }
+
+  @media (max-width: 768px) {
+    .km-works { padding: 48px 0; }
+    .km-works-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .km-work-thumb { height: 160px; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ====================================
+       ヘッダー
+  ==================================== -->
+  <header class="km-header">
+    <div class="km-header-inner">
+      <a href="/" class="km-logo">KM<span>ST</span></a>
+      <nav class="km-nav">
+        <a href="/service/">サービス</a>
+        <a href="/pricing/">料金</a>
+        <a href="/case/" class="active">実績</a>
+        <a href="/method/">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用</a>
+        <a href="/contact/" class="km-nav-cta">無料相談する</a>
+      </nav>
+      <div class="km-hamburger" onclick="this.classList.toggle('open');document.getElementById('mobileNav').classList.toggle('open');">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <div class="km-mobile-nav" id="mobileNav">
+    <a href="/service/">サービス</a>
+    <a href="/pricing/">料金</a>
+    <a href="/case/">実績</a>
+    <a href="/method/">メソッド</a>
+    <a href="/company/">会社概要</a>
+    <a href="/recruit/">採用</a>
+    <a href="/contact/" class="km-nav-cta">無料相談する</a>
+  </div>
+
+  <!-- ====================================
+       FV: ヒーロー
+  ==================================== -->
+  <section class="km-sv-hero">
+    <p class="km-sv-hero-en">WORKS</p>
+    <h1>ITベンチャーを中心とした<br>支援実績</h1>
+    <p class="km-sv-hero-sub">補助金採択からAI導入まで、多数の支援実績があります。</p>
+  </section>
+
+  <!-- ====================================
+       事例カードグリッド
+  ==================================== -->
+  <section class="km-works">
+    <div class="km-container">
+      <div class="km-sh">
+        <p class="km-sh-en">CASE STUDY</p>
+        <h2 class="km-sh-title">採択事例</h2>
+        <div class="km-sh-line"></div>
+      </div>
+    </div>
+    <div class="km-works-grid">
+
+      <!-- CASE 01 -->
+      <div class="km-work-card">
+        <div class="km-work-thumb">
+          CASE 01
+          <div class="km-work-tags">
+            <span class="km-work-tag">IT導入補助金</span>
+            <span class="km-work-tag">SaaS</span>
+          </div>
+        </div>
+        <div class="km-work-body">
+          <h3 class="km-work-title">CRM導入で営業効率200%向上</h3>
+          <p class="km-work-meta">SaaS開発 / 従業員15名 / シリーズA</p>
+          <div class="km-work-amount">補助金 320万円 採択</div>
+        </div>
+      </div>
+
+      <!-- CASE 02 -->
+      <div class="km-work-card">
+        <div class="km-work-thumb">
+          CASE 02
+          <div class="km-work-tags">
+            <span class="km-work-tag">ものづくり補助金</span>
+            <span class="km-work-tag">AI</span>
+          </div>
+        </div>
+        <div class="km-work-body">
+          <h3 class="km-work-title">AI画像解析システムの開発資金を確保</h3>
+          <p class="km-work-meta">AI開発 / 従業員8名 / シード</p>
+          <div class="km-work-amount">補助金 1,000万円 採択</div>
+        </div>
+      </div>
+
+      <!-- CASE 03 -->
+      <div class="km-work-card">
+        <div class="km-work-thumb">
+          CASE 03
+          <div class="km-work-tags">
+            <span class="km-work-tag">AI研修</span>
+            <span class="km-work-tag">人材開発支援助成金</span>
+          </div>
+        </div>
+        <div class="km-work-body">
+          <h3 class="km-work-title">全社員30名がChatGPTを業務活用</h3>
+          <p class="km-work-meta">製造業 / 従業員50名</p>
+          <div class="km-work-amount">研修費 実質0円</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================
+       CTA
+  ==================================== -->
+  <section class="km-cta" style="background: linear-gradient(135deg, var(--km-red, #E53935) 0%, var(--km-red-dark, #C62828) 100%);">
+    <div class="km-container">
+      <h2>まずは無料相談から</h2>
+      <p class="km-cta-sub">補助金の活用可能性を無料で診断いたします。<br>お気軽にご相談ください。</p>
+      <div class="km-cta-btns">
+        <a href="/contact/" class="km-btn km-btn--white km-btn--lg">無料相談する</a>
+      </div>
+      <p class="km-cta-note">相談は無料です。お気軽にお問い合わせください。</p>
+    </div>
+  </section>
+
+  <!-- ====================================
+       フッター
+  ==================================== -->
+  <footer class="km-footer">
+    <div class="km-footer-inner">
+      <div class="km-footer-brand">
+        <span class="km-logo">KM<span>ST</span></span>
+        <p>KMST株式会社<br>ITベンチャー特化の補助金申請支援 &amp; AI導入コンサルティング<br>〒760-XXXX 香川県高松市XXXXXXX</p>
+      </div>
+      <div class="km-footer-nav">
+        <h4>サービス</h4>
+        <a href="/service/">サービス一覧</a>
+        <a href="/pricing/">料金プラン</a>
+        <a href="/case/">支援実績</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>コンテンツ</h4>
+        <a href="/method/">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用情報</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>お問い合わせ</h4>
+        <a href="/contact/">無料相談</a>
+        <a href="/privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="km-footer-bottom">
+      <p>&copy; 2025 KMST株式会社</p>
+      <a href="/privacy/">プライバシーポリシー</a>
+    </div>
+  </footer>
+
+  <!-- モバイル固定CTA -->
+  <div class="km-fixed-cta">
+    <a href="tel:000-000-0000" class="km-fc-secondary">電話で相談</a>
+    <a href="/contact/" class="km-fc-primary">無料相談する</a>
+  </div>
+
+</body>
+</html>

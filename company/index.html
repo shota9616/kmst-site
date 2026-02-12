@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社概要 | KMST株式会社</title>
+  <meta name="description" content="KMST株式会社の会社概要。ITベンチャーの挑戦を、資金面から支える。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+  /* Mission */
+  .km-mission { padding: 100px 0; background: #fff; text-align: center; }
+  .km-mission-inner { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+  .km-mission-copy { font-size: 28px; font-weight: 900; color: #1A1A2E; line-height: 1.6; margin-bottom: 24px; }
+  .km-mission-copy em { color: #E53935; font-style: normal; }
+  .km-mission-desc { font-size: 15px; color: #6B6B6B; line-height: 2; }
+
+  /* Company Info Table */
+  .km-company-info { padding: 80px 0; background: #FAFAFA; }
+  .km-info-table { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .km-info-table table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .km-info-table th { background: #FAFAFA; padding: 16px 24px; font-size: 14px; font-weight: 600; color: #6B6B6B; text-align: left; width: 150px; border-bottom: 1px solid #f0f0f0; }
+  .km-info-table td { padding: 16px 24px; font-size: 14px; color: #2C2C2C; border-bottom: 1px solid #f0f0f0; }
+  .km-info-table tr:last-child th, .km-info-table tr:last-child td { border-bottom: none; }
+
+  /* CEO Message */
+  .km-ceo { padding: 100px 0; background: #fff; }
+  .km-ceo-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; display: flex; gap: 40px; align-items: flex-start; }
+  .km-ceo-photo { flex-shrink: 0; width: 200px; height: 250px; background: linear-gradient(135deg, #e0e0e0, #f5f5f5); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 14px; }
+  .km-ceo-text h3 { font-size: 20px; font-weight: 700; color: #1A1A2E; margin-bottom: 16px; line-height: 1.5; }
+  .km-ceo-text p { font-size: 14px; color: #6B6B6B; line-height: 2; margin-bottom: 16px; }
+  .km-ceo-name { font-size: 14px; color: #9E9E9E; margin-top: 16px; }
+  .km-ceo-name strong { font-size: 16px; color: #1A1A2E; }
+
+  @media (max-width: 768px) {
+    .km-mission { padding: 60px 0; }
+    .km-mission-copy { font-size: 22px; }
+    .km-ceo { padding: 60px 0; }
+    .km-ceo-inner { flex-direction: column; align-items: center; text-align: center; }
+  }
+  </style>
+</head>
+<body>
+
+  <header class="km-header">
+    <div class="km-header-inner">
+      <a href="/" class="km-logo">KM<span>ST</span></a>
+      <nav class="km-nav">
+        <a href="/service/">サービス</a>
+        <a href="/pricing/">料金</a>
+        <a href="/case/">実績</a>
+        <a href="/method/">メソッド</a>
+        <a href="/company/" class="active">会社概要</a>
+        <a href="/recruit/">採用</a>
+        <a href="/contact/" class="km-nav-cta">無料相談する</a>
+      </nav>
+      <div class="km-hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+  <div class="km-mobile-nav" id="mobileNav">
+    <a href="/service/">サービス</a>
+    <a href="/pricing/">料金</a>
+    <a href="/case/">実績</a>
+    <a href="/method/">メソッド</a>
+    <a href="/company/">会社概要</a>
+    <a href="/recruit/">採用</a>
+    <a href="/contact/" class="km-nav-cta">無料相談する</a>
+  </div>
+
+  <section class="km-sv-hero">
+    <p class="km-sv-hero-en">COMPANY</p>
+    <h1>会社概要</h1>
+    <p class="km-sv-hero-sub">ITベンチャーの挑戦を、資金面から支える。</p>
+  </section>
+
+  <section class="km-mission">
+    <div class="km-mission-inner">
+      <div class="km-sh"><p class="km-sh-en">MISSION</p></div>
+      <p class="km-mission-copy">すべてのITベンチャーに、<br><em>挑戦する資金を。</em></p>
+      <p class="km-mission-desc">テクノロジーで社会を変えようとするスタートアップが、資金の壁で諦めることがないように。KMSTは、補助金・助成金という仕組みを活用して、挑戦するベンチャーの成長を後押しします。</p>
+    </div>
+  </section>
+
+  <section class="km-company-info">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+      <div class="km-sh">
+        <p class="km-sh-en">INFORMATION</p>
+        <h2 class="km-sh-title">会社情報</h2>
+        <div class="km-sh-line"></div>
+      </div>
+    </div>
+    <div class="km-info-table">
+      <table>
+        <tr><th>会社名</th><td>KMST株式会社</td></tr>
+        <tr><th>設立</th><td>2023年（合同会社として2021年設立、2023年株式会社化）</td></tr>
+        <tr><th>代表取締役</th><td>鎌倉 翔太</td></tr>
+        <tr><th>所在地</th><td>〒760-XXXX 香川県高松市XXXXXXX</td></tr>
+        <tr><th>事業内容</th><td>補助金・助成金申請支援 / AI導入コンサルティング / AI研修サービス</td></tr>
+        <tr><th>URL</th><td>https://kmst.co.jp</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="km-ceo">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+      <div class="km-sh">
+        <p class="km-sh-en">MESSAGE</p>
+        <h2 class="km-sh-title">代表メッセージ</h2>
+        <div class="km-sh-line"></div>
+      </div>
+    </div>
+    <div class="km-ceo-inner">
+      <div class="km-ceo-photo">写真</div>
+      <div class="km-ceo-text">
+        <h3>資金のハードルを取り除き、<br>すべてのスタートアップに挑戦の機会を。</h3>
+        <p>KMSTを立ち上げたのは、「良い技術やサービスを持っているのに、資金不足で成長できないスタートアップが多すぎる」と感じたことがきっかけです。</p>
+        <p>補助金・助成金は、正しく活用すれば強力な資金調達手段になります。KMSTは、ITベンチャーの事業を深く理解し、最適な補助金を選定・申請する。さらにAI導入・研修まで一貫サポートすることで、資金調達で終わらない本当の成長支援を実現します。</p>
+        <div class="km-ceo-name">代表取締役<br><strong>鎌倉 翔太</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="km-cta">
+    <div class="km-container">
+      <h2>補助金・AI導入のご相談は<br>お気軽にどうぞ</h2>
+      <p class="km-cta-sub">初回相談は無料。最短即日対応いたします。</p>
+      <div class="km-cta-btns">
+        <a href="/contact/" class="km-btn km-btn--white km-btn--lg">無料相談する →</a>
+        <a href="/pricing/" class="km-btn km-btn--outline km-btn--lg" style="border-color:#fff;color:#fff;">料金を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="km-footer">
+    <div class="km-footer-inner">
+      <div class="km-footer-brand">
+        <a href="/" class="km-logo">KM<span>ST</span></a>
+        <p>制度とテクノロジーで<br>中小企業の成果を作る。</p>
+      </div>
+      <div class="km-footer-nav">
+        <h4>サービス</h4>
+        <a href="/service/">サービス一覧</a>
+        <a href="/pricing/">料金</a>
+        <a href="/case/">実績</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>情報</h4>
+        <a href="/method/">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>お問い合わせ</h4>
+        <a href="/contact/">無料相談</a>
+        <a href="/privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="km-footer-bottom">
+      <span>&copy; 2025 KMST Inc. All rights reserved.</span>
+      <a href="/privacy/">プライバシーポリシー</a>
+    </div>
+  </footer>
+  <div class="km-fixed-cta">
+    <a href="tel:000-0000-0000" class="km-fc-secondary">電話で相談</a>
+    <a href="/contact/" class="km-fc-primary">無料相談する</a>
+  </div>
+
+  <script>
+  function toggleMenu() {
+    var hamburger = document.querySelector('.km-hamburger');
+    var mobileNav = document.getElementById('mobileNav');
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  }
+  window.addEventListener('scroll', function() {
+    var header = document.querySelector('.km-header');
+    if (window.scrollY > 10) {
+      header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+  });
+  </script>
+
+</body>
+</html>

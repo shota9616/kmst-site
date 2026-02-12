@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | KMST株式会社</title>
+<meta name="description" content="KMST株式会社へのお問い合わせ。補助金・AI導入に関するご相談は、お気軽にどうぞ。無料相談は最短即日対応。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.km-contact { padding: 80px 0; background: #fff; }
+.km-contact-inner { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+.km-contact-assurance { display: flex; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+.km-assurance-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #6B6B6B; }
+.km-assurance-item::before { content: "\2713"; color: #4CAF50; font-weight: 700; }
+.km-form-group { margin-bottom: 24px; }
+.km-form-label { display: block; font-size: 14px; font-weight: 600; color: #1A1A2E; margin-bottom: 8px; }
+.km-form-label .required { background: #E53935; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; }
+.km-form-input, .km-form-textarea { width: 100%; padding: 14px 16px; border: 2px solid #E8E8E8; border-radius: 8px; font-size: 15px; transition: 0.3s ease; background: #fff; font-family: 'Noto Sans JP', sans-serif; }
+.km-form-input:focus, .km-form-textarea:focus { border-color: #E53935; outline: none; }
+.km-form-textarea { height: 160px; resize: vertical; }
+.km-form-radio-group { display: flex; flex-direction: column; gap: 8px; }
+.km-form-radio { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #2C2C2C; cursor: pointer; }
+.km-form-submit { text-align: center; margin-top: 32px; }
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="km-header">
+  <div class="km-header-inner">
+    <a href="/" class="km-logo">KM<span>ST</span></a>
+    <nav class="km-nav">
+      <a href="/service/">サービス</a>
+      <a href="/pricing/">料金</a>
+      <a href="/case/">実績</a>
+      <a href="/method/">メソッド</a>
+      <a href="/company/">会社概要</a>
+      <a href="/recruit/">採用</a>
+      <a href="/contact/" class="km-nav-cta active">無料相談する</a>
+    </nav>
+    <div class="km-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+<div class="km-mobile-nav" id="mobileNav">
+  <a href="/service/">サービス</a>
+  <a href="/pricing/">料金</a>
+  <a href="/case/">実績</a>
+  <a href="/method/">メソッド</a>
+  <a href="/company/">会社概要</a>
+  <a href="/recruit/">採用</a>
+  <a href="/contact/" class="km-nav-cta">無料相談する</a>
+</div>
+
+<!-- ===== ヒーロー ===== -->
+<section class="km-sv-hero">
+  <p class="km-sv-hero-en">CONTACT</p>
+  <h1>お問い合わせ</h1>
+  <p class="km-sv-hero-sub">補助金・AI導入に関するご相談は、お気軽にどうぞ。<br>無料相談は最短即日対応。</p>
+</section>
+
+<!-- ===== お問い合わせフォーム ===== -->
+<section class="km-contact">
+  <div class="km-contact-inner">
+    <div class="km-contact-assurance">
+      <div class="km-assurance-item">無料相談は最短即日対応</div>
+      <div class="km-assurance-item">営業時間：平日9:00〜18:00</div>
+      <div class="km-assurance-item">しつこい営業は一切しません</div>
+    </div>
+    <form>
+      <div class="km-form-group">
+        <label class="km-form-label">お問い合わせ種別<span class="required">必須</span></label>
+        <div class="km-form-radio-group">
+          <label class="km-form-radio"><input type="radio" name="type"> 補助金について相談したい</label>
+          <label class="km-form-radio"><input type="radio" name="type"> AI導入について相談したい</label>
+          <label class="km-form-radio"><input type="radio" name="type"> AI研修について相談したい</label>
+          <label class="km-form-radio"><input type="radio" name="type"> サービス資料を希望</label>
+          <label class="km-form-radio"><input type="radio" name="type"> 採用に応募したい</label>
+          <label class="km-form-radio"><input type="radio" name="type"> カジュアル面談を申し込みたい</label>
+          <label class="km-form-radio"><input type="radio" name="type"> その他</label>
+        </div>
+      </div>
+      <div class="km-form-group">
+        <label class="km-form-label">会社名<span class="required">必須</span></label>
+        <input type="text" class="km-form-input" placeholder="例：KMST株式会社">
+      </div>
+      <div class="km-form-group">
+        <label class="km-form-label">氏名<span class="required">必須</span></label>
+        <input type="text" class="km-form-input" placeholder="例：山田 太郎">
+      </div>
+      <div class="km-form-group">
+        <label class="km-form-label">メールアドレス<span class="required">必須</span></label>
+        <input type="email" class="km-form-input" placeholder="例：info@example.co.jp">
+      </div>
+      <div class="km-form-group">
+        <label class="km-form-label">電話番号</label>
+        <input type="tel" class="km-form-input" placeholder="例：03-1234-5678">
+      </div>
+      <div class="km-form-group">
+        <label class="km-form-label">お問い合わせ内容<span class="required">必須</span></label>
+        <textarea class="km-form-textarea" placeholder="ご相談内容をご記入ください"></textarea>
+      </div>
+      <div class="km-form-submit">
+        <button type="submit" class="km-btn km-btn--red km-btn--lg" style="min-width:280px;">送信する</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="km-footer">
+  <div class="km-footer-inner">
+    <div class="km-footer-brand">
+      <a href="/" class="km-logo">KM<span>ST</span></a>
+      <p>制度とテクノロジーで<br>中小企業の成果を作る。</p>
+    </div>
+    <div class="km-footer-nav">
+      <h4>サービス</h4>
+      <a href="/service/">サービス一覧</a>
+      <a href="/pricing/">料金</a>
+      <a href="/case/">実績</a>
+    </div>
+    <div class="km-footer-nav">
+      <h4>情報</h4>
+      <a href="/method/">メソッド</a>
+      <a href="/company/">会社概要</a>
+      <a href="/recruit/">採用</a>
+    </div>
+    <div class="km-footer-nav">
+      <h4>お問い合わせ</h4>
+      <a href="/contact/">無料相談</a>
+      <a href="/privacy/">プライバシーポリシー</a>
+    </div>
+  </div>
+  <div class="km-footer-bottom">
+    <span>&copy; 2025 KMST Inc. All rights reserved.</span>
+    <a href="/privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+<div class="km-fixed-cta">
+  <a href="tel:000-0000-0000" class="km-fc-secondary">電話で相談</a>
+  <a href="/contact/" class="km-fc-primary">無料相談する</a>
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+function toggleMenu() {
+  var hamburger = document.querySelector('.km-hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+  document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+}
+window.addEventListener('scroll', function() {
+  var header = document.querySelector('.km-header');
+  if (window.scrollY > 10) {
+    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+});
+</script>
+
+</body>
+</html>

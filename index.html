@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMST株式会社 | ITベンチャー特化の補助金コンサルティング</title>
+  <meta name="description" content="ITベンチャー専門の補助金コンサルタントが、AI導入から資金調達まで一貫サポート。採択率90%、着手金ゼロ・成功報酬15%。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+  /* ============================================
+     トップページ固有CSS
+     ============================================ */
+
+  /* --- FV (First View) --- */
+  .km-fv {
+    background: linear-gradient(135deg, #1A1A2E 0%, #2D2D44 100%);
+    padding: 120px 0 80px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .km-fv::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(229,57,53,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .km-fv-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .km-fv-badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .km-fv-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .km-fv-badge--red {
+    background: rgba(229,57,53,0.2);
+    color: #FF6F61;
+    border: 1px solid rgba(229,57,53,0.3);
+  }
+  .km-fv-badge--blue {
+    background: rgba(25,118,210,0.15);
+    color: #64B5F6;
+    border: 1px solid rgba(25,118,210,0.3);
+  }
+  .km-fv h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+  .km-fv h1 em {
+    color: var(--km-red-light);
+    font-style: normal;
+  }
+  .km-fv-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    max-width: 600px;
+  }
+  .km-fv-checks {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 36px;
+  }
+  .km-fv-checks li {
+    padding: 6px 0;
+    font-size: 15px;
+    color: rgba(255,255,255,0.9);
+  }
+  .km-fv-checks li::before {
+    content: "\2713 ";
+    color: #4CAF50;
+    font-weight: 700;
+  }
+  .km-fv-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  /* 実績バー */
+  .km-fv-stats {
+    display: flex;
+    gap: 0;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .km-fv-stat {
+    flex: 1;
+    text-align: center;
+    padding: 28px 16px;
+  }
+  .km-fv-stat + .km-fv-stat {
+    border-left: 1px solid rgba(255,255,255,0.08);
+  }
+  .km-fv-stat-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--km-red-light);
+    line-height: 1;
+  }
+  .km-fv-stat-num span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .km-fv-stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .km-fv { padding: 80px 0 60px; }
+    .km-fv h1 { font-size: 28px; }
+    .km-fv-sub { font-size: 15px; }
+    .km-fv-btns { flex-direction: column; }
+    .km-fv-btns .km-btn { width: 100%; justify-content: center; }
+    .km-fv-stats { flex-direction: column; }
+    .km-fv-stat + .km-fv-stat { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+    .km-fv-stat-num { font-size: 32px; }
+  }
+
+  /* --- ロゴスライダー --- */
+  .km-logo-slider {
+    padding: 48px 0;
+    background: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid var(--km-border);
+  }
+  .km-logo-slider-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--km-text-light);
+    margin-bottom: 24px;
+  }
+  .km-logo-track-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .km-logo-track-wrapper::before,
+  .km-logo-track-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .km-logo-track-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+  }
+  .km-logo-track-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
+  }
+  .km-logo-track {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    animation: km-logo-scroll 20s linear infinite;
+    width: max-content;
+  }
+  .km-logo-track img {
+    height: 36px;
+    width: auto;
+    opacity: 0.45;
+    filter: grayscale(100%);
+    transition: var(--km-transition);
+  }
+  .km-logo-track img:hover {
+    opacity: 0.8;
+    filter: grayscale(0%);
+  }
+  @keyframes km-logo-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @media (max-width: 768px) {
+    .km-logo-slider { padding: 32px 0; }
+    .km-logo-track { gap: 32px; }
+    .km-logo-track img { height: 28px; }
+    .km-logo-track-wrapper::before,
+    .km-logo-track-wrapper::after { width: 40px; }
+  }
+
+  /* --- REASON --- */
+  .km-reason {
+    padding: 100px 0;
+    background: #fff;
+  }
+  .km-reason-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .km-reason-card {
+    background: #fff;
+    border: 1px solid var(--km-border);
+    border-radius: var(--km-radius);
+    padding: 40px 32px;
+    transition: var(--km-transition);
+    position: relative;
+  }
+  .km-reason-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--km-shadow);
+    border-color: transparent;
+  }
+  .km-reason-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(229,57,53,0.1);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .km-reason-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--km-navy);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .km-reason-desc {
+    font-size: 14px;
+    color: var(--km-text-light);
+    line-height: 1.8;
+  }
+  @media (max-width: 768px) {
+    .km-reason { padding: 60px 0; }
+    .km-reason-grid { grid-template-columns: 1fr; }
+  }
+
+  /* --- SERVICE --- */
+  .km-svc {
+    padding: 100px 0;
+    background: var(--km-bg);
+  }
+  .km-svc-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .km-svc-card {
+    background: #fff;
+    border-radius: var(--km-radius);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--km-transition);
+  }
+  .km-svc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--km-shadow);
+  }
+  .km-svc-head {
+    padding: 32px 24px 24px;
+    text-align: center;
+  }
+  .km-svc-head--red { border-top: 4px solid var(--km-red); }
+  .km-svc-head--blue { border-top: 4px solid #1976D2; }
+  .km-svc-head--orange { border-top: 4px solid #FF8A65; }
+  .km-svc-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 28px;
+  }
+  .km-svc-icon--red { background: rgba(229,57,53,0.1); }
+  .km-svc-icon--blue { background: rgba(25,118,210,0.1); }
+  .km-svc-icon--orange { background: rgba(255,138,101,0.1); }
+  .km-svc-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--km-navy);
+    line-height: 1.4;
+  }
+  .km-svc-body {
+    padding: 0 24px 24px;
+    flex: 1;
+  }
+  .km-svc-body .km-checks {
+    font-size: 14px;
+  }
+  .km-svc-footer {
+    padding: 0 24px 24px;
+    border-top: 1px solid var(--km-border);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+  .km-svc-link {
+    color: var(--km-red);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .km-svc-link:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .km-svc { padding: 60px 0; }
+    .km-svc-grid { grid-template-columns: 1fr; }
+  }
+
+  /* --- PRICING --- */
+  .km-pricing {
+    background: linear-gradient(135deg, var(--km-navy) 0%, #2D2D44 100%);
+    padding: 80px 0;
+    color: #fff;
+    text-align: center;
+  }
+  .km-pricing-lead {
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+  .km-pricing-headline {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .km-pricing-headline em {
+    color: var(--km-red-light);
+    font-style: normal;
+  }
+  .km-pricing-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 40px;
+  }
+  .km-pricing-cards {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .km-pricing-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--km-radius);
+    padding: 32px 20px;
+    position: relative;
+  }
+  .km-pricing-card.is-featured {
+    background: rgba(229,57,53,0.15);
+    border-color: rgba(229,57,53,0.3);
+  }
+  .km-pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--km-red);
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .km-pricing-name {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 12px;
+  }
+  .km-pricing-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+  }
+  .km-pricing-price em {
+    font-size: 42px;
+    color: var(--km-red-light);
+    font-style: normal;
+  }
+  .km-pricing-detail {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 8px;
+  }
+  .km-pricing-note {
+    max-width: 900px;
+    margin: 24px auto 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    padding: 0 24px;
+  }
+  @media (max-width: 768px) {
+    .km-pricing { padding: 60px 0; }
+    .km-pricing-headline { font-size: 24px; }
+    .km-pricing-cards { grid-template-columns: 1fr; max-width: 400px; }
+  }
+
+  /* --- FLOW --- */
+  .km-flow {
+    padding: 100px 0;
+    background: #fff;
+  }
+  .km-flow-steps {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .km-flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 0;
+    position: relative;
+  }
+  .km-flow-step + .km-flow-step {
+    border-top: 1px dashed var(--km-border);
+  }
+  .km-flow-num {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--km-red);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .km-flow-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--km-navy);
+    margin-bottom: 4px;
+  }
+  .km-flow-content p {
+    font-size: 14px;
+    color: var(--km-text-light);
+  }
+  @media (max-width: 768px) {
+    .km-flow { padding: 60px 0; }
+  }
+
+  /* --- WORKS --- */
+  .km-works {
+    padding: 100px 0;
+    background: var(--km-bg);
+  }
+  .km-works-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .km-works-card {
+    background: #fff;
+    border-radius: var(--km-radius);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: var(--km-transition);
+  }
+  .km-works-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--km-shadow);
+  }
+  .km-works-thumb {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--km-navy) 0%, #2D2D44 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: rgba(255,255,255,0.15);
+  }
+  .km-works-body {
+    padding: 24px;
+  }
+  .km-works-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .km-works-tag--red {
+    background: rgba(229,57,53,0.1);
+    color: var(--km-red);
+  }
+  .km-works-tag--blue {
+    background: rgba(25,118,210,0.1);
+    color: #1976D2;
+  }
+  .km-works-tag--orange {
+    background: rgba(255,138,101,0.1);
+    color: #E65100;
+  }
+  .km-works-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--km-navy);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .km-works-result {
+    font-size: 14px;
+    color: var(--km-text-light);
+    line-height: 1.6;
+  }
+  .km-works-amount {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--km-red);
+  }
+  .km-works-amount span {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--km-text-light);
+  }
+  .km-works-more {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .km-works-more a {
+    color: var(--km-red);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--km-transition);
+  }
+  .km-works-more a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .km-works { padding: 60px 0; }
+    .km-works-grid { grid-template-columns: 1fr; }
+  }
+
+  /* --- METHOD --- */
+  .km-method {
+    padding: 100px 0;
+    background: #fff;
+  }
+  .km-method-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .km-method-card {
+    background: #fff;
+    border: 1px solid var(--km-border);
+    border-radius: var(--km-radius);
+    overflow: hidden;
+    transition: var(--km-transition);
+    text-decoration: none;
+    display: block;
+  }
+  .km-method-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--km-shadow);
+    border-color: transparent;
+  }
+  .km-method-thumb {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--km-text-light);
+  }
+  .km-method-body {
+    padding: 20px 24px 24px;
+  }
+  .km-method-cat {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .km-method-cat--subsidy {
+    background: rgba(229,57,53,0.08);
+    color: var(--km-red);
+  }
+  .km-method-cat--plan {
+    background: rgba(25,118,210,0.08);
+    color: #1976D2;
+  }
+  .km-method-cat--ai {
+    background: rgba(255,138,101,0.08);
+    color: #E65100;
+  }
+  .km-method-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--km-navy);
+    line-height: 1.6;
+  }
+  .km-method-more {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .km-method-more a {
+    color: var(--km-red);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--km-transition);
+  }
+  .km-method-more a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .km-method { padding: 60px 0; }
+    .km-method-grid { grid-template-columns: 1fr; }
+  }
+
+  /* --- FAQ --- */
+  .km-faq {
+    padding: 100px 0;
+    background: var(--km-bg);
+  }
+  .km-faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .km-faq-item {
+    background: #fff;
+    border-radius: var(--km-radius);
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .km-faq-q {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--km-navy);
+    transition: var(--km-transition);
+  }
+  .km-faq-q:hover { background: #f9f9f9; }
+  .km-faq-q::before {
+    content: "Q";
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--km-red);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .km-faq-q::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 20px;
+    color: var(--km-red);
+    transition: var(--km-transition);
+    flex-shrink: 0;
+  }
+  .km-faq-item.open .km-faq-q::after {
+    transform: rotate(45deg);
+  }
+  .km-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .km-faq-a-inner {
+    padding: 0 24px 20px 72px;
+    font-size: 14px;
+    color: var(--km-text-light);
+    line-height: 1.8;
+  }
+  @media (max-width: 768px) {
+    .km-faq { padding: 60px 0; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ====================================
+       HEADER
+  ==================================== -->
+  <header class="km-header">
+    <div class="km-header-inner">
+      <a href="/" class="km-logo"><span>KM</span>ST</a>
+      <nav class="km-nav">
+        <a href="/service/">サービス</a>
+        <a href="/pricing/">料金</a>
+        <a href="/case/">実績</a>
+        <a href="/method/">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用</a>
+        <a href="/contact/" class="km-nav-cta">無料相談する</a>
+      </nav>
+      <div class="km-hamburger" onclick="this.classList.toggle('open');document.getElementById('km-mobile-nav').classList.toggle('open');">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <div class="km-mobile-nav" id="km-mobile-nav">
+    <a href="/service/" onclick="document.getElementById('km-mobile-nav').classList.remove('open');document.querySelector('.km-hamburger').classList.remove('open');">サービス</a>
+    <a href="/pricing/" onclick="document.getElementById('km-mobile-nav').classList.remove('open');document.querySelector('.km-hamburger').classList.remove('open');">料金</a>
+    <a href="/case/" onclick="document.getElementById('km-mobile-nav').classList.remove('open');document.querySelector('.km-hamburger').classList.remove('open');">実績</a>
+    <a href="/method/" onclick="document.getElementById('km-mobile-nav').classList.remove('open');document.querySelector('.km-hamburger').classList.remove('open');">メソッド</a>
+    <a href="/company/" onclick="document.getElementById('km-mobile-nav').classList.remove('open');document.querySelector('.km-hamburger').classList.remove('open');">会社概要</a>
+    <a href="/recruit/" onclick="document.getElementById('km-mobile-nav').classList.remove('open');document.querySelector('.km-hamburger').classList.remove('open');">採用</a>
+    <a href="/contact/" class="km-nav-cta" onclick="document.getElementById('km-mobile-nav').classList.remove('open');document.querySelector('.km-hamburger').classList.remove('open');">無料相談する</a>
+  </div>
+
+  <main>
+
+    <!-- ====================================
+         SECTION: FV (First View)
+    ==================================== -->
+    <section class="km-fv">
+      <div class="km-fv-inner">
+        <div class="km-fv-badges">
+          <span class="km-fv-badge km-fv-badge--red">ITベンチャー特化</span>
+          <span class="km-fv-badge km-fv-badge--blue">AI導入支援</span>
+        </div>
+
+        <h1>スタートアップの成長を、<br><em>補助金</em>で加速する。</h1>
+
+        <p class="km-fv-sub">
+          ITベンチャー専門の補助金コンサルタントが、<br>
+          AI導入から資金調達まで一貫サポート。
+        </p>
+
+        <ul class="km-fv-checks">
+          <li>採択率90%の実績</li>
+          <li>着手金ゼロ・成功報酬15%</li>
+          <li>AI研修 助成金で最大75%OFF</li>
+        </ul>
+
+        <div class="km-fv-btns">
+          <a href="/contact/" class="km-btn km-btn--red km-btn--lg">無料相談する &rarr;</a>
+          <a href="/contact/" class="km-btn km-btn--white km-btn--lg">お問い合わせはこちら</a>
+        </div>
+
+        <div class="km-fv-stats">
+          <div class="km-fv-stat">
+            <div class="km-fv-stat-num">90<span>%</span></div>
+            <div class="km-fv-stat-label">採択率</div>
+          </div>
+          <div class="km-fv-stat">
+            <div class="km-fv-stat-num">200<span>社+</span></div>
+            <div class="km-fv-stat-label">年間支援企業</div>
+          </div>
+          <div class="km-fv-stat">
+            <div class="km-fv-stat-num">5<span>億円</span></div>
+            <div class="km-fv-stat-label">累計獲得支援額</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================
+         SECTION: LOGO SLIDER
+    ==================================== -->
+    <section class="km-logo-slider">
+      <p class="km-logo-slider-label">取引先企業</p>
+      <div class="km-logo-track-wrapper">
+        <div class="km-logo-track">
+          <!-- 1周目 -->
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+A" alt="取引先企業A">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+B" alt="取引先企業B">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+C" alt="取引先企業C">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+D" alt="取引先企業D">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+E" alt="取引先企業E">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+F" alt="取引先企業F">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+G" alt="取引先企業G">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+H" alt="取引先企業H">
+          <!-- 2周目（シームレスループ用） -->
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+A" alt="取引先企業A">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+B" alt="取引先企業B">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+C" alt="取引先企業C">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+D" alt="取引先企業D">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+E" alt="取引先企業E">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+F" alt="取引先企業F">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+G" alt="取引先企業G">
+          <img src="https://placehold.co/160x36/e8e8e8/6b6b6b?text=Client+H" alt="取引先企業H">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================
+         SECTION: REASON
+    ==================================== -->
+    <section class="km-reason">
+      <div class="km-container">
+        <div class="km-sh">
+          <p class="km-sh-en">REASON</p>
+          <h2 class="km-sh-title">KMSTが選ばれる<br>4つの理由</h2>
+          <div class="km-sh-line"></div>
+        </div>
+      </div>
+      <div class="km-reason-grid">
+        <div class="km-reason-card">
+          <div class="km-reason-num">01</div>
+          <h3 class="km-reason-title">採択率90%の実績</h3>
+          <p class="km-reason-desc">ITベンチャーの事業計画を知り尽くした専門チームが、採択率90%の実績で申請をサポートします。</p>
+        </div>
+        <div class="km-reason-card">
+          <div class="km-reason-num">02</div>
+          <h3 class="km-reason-title">着手金ゼロ・成功報酬15%</h3>
+          <p class="km-reason-desc">採択されなければ費用はゼロ。料金を明示している補助金コンサルは業界でKMSTだけです。</p>
+        </div>
+        <div class="km-reason-card">
+          <div class="km-reason-num">03</div>
+          <h3 class="km-reason-title">ITベンチャー特化</h3>
+          <p class="km-reason-desc">中小企業全般ではなく、スタートアップ・IT企業に特化。業界特性を理解した提案が可能です。</p>
+        </div>
+        <div class="km-reason-card">
+          <div class="km-reason-num">04</div>
+          <h3 class="km-reason-title">AI導入×補助金の一括提案</h3>
+          <p class="km-reason-desc">補助金の取得からAI導入・社内研修まで一貫サポート。「取ったけど使えない」を防ぎます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================
+         SECTION: SERVICE
+    ==================================== -->
+    <section class="km-svc">
+      <div class="km-container">
+        <div class="km-sh">
+          <p class="km-sh-en">SERVICE</p>
+          <h2 class="km-sh-title">3つの事業で<br>成長をサポート</h2>
+          <div class="km-sh-line"></div>
+        </div>
+      </div>
+      <div class="km-svc-grid">
+
+        <!-- 補助金支援 -->
+        <div class="km-svc-card">
+          <div class="km-svc-head km-svc-head--red">
+            <div class="km-svc-icon km-svc-icon--red">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="km-svc-name">ITベンチャー向け<br>補助金支援</h3>
+          </div>
+          <div class="km-svc-body">
+            <ul class="km-checks">
+              <li>採択率90%超の実績</li>
+              <li>着手金ゼロ・成功報酬15%</li>
+              <li>事業計画書の作成支援</li>
+              <li>士業チーム（税理士・社労士）連携</li>
+            </ul>
+          </div>
+          <div class="km-svc-footer">
+            <a href="/service/#subsidy" class="km-svc-link">詳しく見る &rarr;</a>
+          </div>
+        </div>
+
+        <!-- AI導入 -->
+        <div class="km-svc-card">
+          <div class="km-svc-head km-svc-head--blue">
+            <div class="km-svc-icon km-svc-icon--blue">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1976D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="km-svc-name">AI導入<br>コンサルティング</h3>
+          </div>
+          <div class="km-svc-body">
+            <ul class="km-checks">
+              <li>業務プロセスのAI化診断</li>
+              <li>最適なAIツール選定・導入支援</li>
+              <li>補助金活用でコスト最大75%削減</li>
+              <li>導入後の運用サポート</li>
+            </ul>
+          </div>
+          <div class="km-svc-footer">
+            <a href="/service/#ai-implementation" class="km-svc-link">詳しく見る &rarr;</a>
+          </div>
+        </div>
+
+        <!-- AI研修 -->
+        <div class="km-svc-card">
+          <div class="km-svc-head km-svc-head--orange">
+            <div class="km-svc-icon km-svc-icon--orange">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF8A65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3 class="km-svc-name">AI研修<br>サービス</h3>
+          </div>
+          <div class="km-svc-body">
+            <ul class="km-checks">
+              <li>ChatGPT / Claude / 生成AI実践研修</li>
+              <li>人材開発支援助成金で最大75%OFF</li>
+              <li>月10万円の研修が実質2.5万円に</li>
+              <li>カスタマイズ可能なカリキュラム</li>
+            </ul>
+          </div>
+          <div class="km-svc-footer">
+            <a href="/service/#ai-training" class="km-svc-link">詳しく見る &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================
+         SECTION: PRICING
+    ==================================== -->
+    <section class="km-pricing">
+      <p class="km-pricing-lead">業界で料金を明示している競合はほぼゼロ</p>
+      <h2 class="km-pricing-headline"><em>着手金ゼロ</em>、成功報酬<em>15%</em>。</h2>
+      <p class="km-pricing-sub">採択されなければ、費用は一切かかりません。</p>
+
+      <div class="km-pricing-cards">
+        <div class="km-pricing-card is-featured">
+          <span class="km-pricing-badge">人気No.1</span>
+          <div class="km-pricing-name">補助金申請支援</div>
+          <div class="km-pricing-price"><em>0</em>円</div>
+          <div class="km-pricing-detail">着手金 &rarr; 成功報酬15%</div>
+        </div>
+        <div class="km-pricing-card">
+          <div class="km-pricing-name">AI導入コンサルティング</div>
+          <div class="km-pricing-price">要相談</div>
+          <div class="km-pricing-detail">プロジェクト別見積</div>
+        </div>
+        <div class="km-pricing-card">
+          <div class="km-pricing-name">AI研修（助成金活用時）</div>
+          <div class="km-pricing-price">実質<em>75%</em>OFF</div>
+          <div class="km-pricing-detail">月額2.5万円〜</div>
+        </div>
+      </div>
+
+      <p class="km-pricing-note">※ 成功報酬は交付決定額に対して発生します。採択前の費用請求は一切ありません。</p>
+    </section>
+
+    <!-- ====================================
+         SECTION: FLOW
+    ==================================== -->
+    <section class="km-flow">
+      <div class="km-container">
+        <div class="km-sh">
+          <p class="km-sh-en">FLOW</p>
+          <h2 class="km-sh-title">ご支援の流れ</h2>
+          <div class="km-sh-line"></div>
+        </div>
+      </div>
+      <div class="km-flow-steps">
+        <div class="km-flow-step">
+          <div class="km-flow-num">1</div>
+          <div class="km-flow-content">
+            <h3>無料相談</h3>
+            <p>お問い合わせから最短即日対応。まずはお気軽にご相談ください。</p>
+          </div>
+        </div>
+        <div class="km-flow-step">
+          <div class="km-flow-num">2</div>
+          <div class="km-flow-content">
+            <h3>診断・提案</h3>
+            <p>最適な補助金・助成金を選定し、申請スケジュールをご提案します。</p>
+          </div>
+        </div>
+        <div class="km-flow-step">
+          <div class="km-flow-num">3</div>
+          <div class="km-flow-content">
+            <h3>申請サポート</h3>
+            <p>事業計画書の作成から申請書類の提出まで、全てKMSTが代行します。</p>
+          </div>
+        </div>
+        <div class="km-flow-step">
+          <div class="km-flow-num">4</div>
+          <div class="km-flow-content">
+            <h3>採択・交付</h3>
+            <p>採択後に成功報酬が発生。不採択の場合は費用ゼロです。</p>
+          </div>
+        </div>
+        <div class="km-flow-step">
+          <div class="km-flow-num">5</div>
+          <div class="km-flow-content">
+            <h3>AI導入・研修</h3>
+            <p>補助金を活用したAIツール導入・社内研修で事業成長を加速します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================
+         SECTION: WORKS
+    ==================================== -->
+    <section class="km-works">
+      <div class="km-container">
+        <div class="km-sh">
+          <p class="km-sh-en">WORKS</p>
+          <h2 class="km-sh-title">支援実績</h2>
+          <div class="km-sh-line"></div>
+        </div>
+      </div>
+      <div class="km-works-grid">
+
+        <!-- 事例1 -->
+        <div class="km-works-card">
+          <div class="km-works-thumb">
+            <img src="https://placehold.co/400x180/1A1A2E/ffffff?text=Case+01" alt="SaaS開発企業A社" style="width:100%;height:100%;object-fit:cover;opacity:0.6;">
+          </div>
+          <div class="km-works-body">
+            <span class="km-works-tag km-works-tag--red">IT導入補助金</span>
+            <h3 class="km-works-title">CRM導入で営業効率200%向上</h3>
+            <p class="km-works-result">SaaS開発企業A社 ― IT導入補助金を活用し、CRMシステムを導入。営業プロセスの効率化に成功。</p>
+            <div class="km-works-amount">320<span>万円 採択</span></div>
+          </div>
+        </div>
+
+        <!-- 事例2 -->
+        <div class="km-works-card">
+          <div class="km-works-thumb">
+            <img src="https://placehold.co/400x180/1A1A2E/ffffff?text=Case+02" alt="AI活用ベンチャーB社" style="width:100%;height:100%;object-fit:cover;opacity:0.6;">
+          </div>
+          <div class="km-works-body">
+            <span class="km-works-tag km-works-tag--blue">ものづくり補助金</span>
+            <h3 class="km-works-title">AI画像解析システムの開発資金を確保</h3>
+            <p class="km-works-result">AI活用ベンチャーB社 ― ものづくり補助金を活用し、AI画像解析システムの開発資金を獲得。</p>
+            <div class="km-works-amount">1,000<span>万円 採択</span></div>
+          </div>
+        </div>
+
+        <!-- 事例3 -->
+        <div class="km-works-card">
+          <div class="km-works-thumb">
+            <img src="https://placehold.co/400x180/1A1A2E/ffffff?text=Case+03" alt="製造業C社" style="width:100%;height:100%;object-fit:cover;opacity:0.6;">
+          </div>
+          <div class="km-works-body">
+            <span class="km-works-tag km-works-tag--orange">AI研修</span>
+            <h3 class="km-works-title">全社員30名がChatGPTを業務活用</h3>
+            <p class="km-works-result">製造業C社 ― 人材開発支援助成金を活用し、全社員30名へのAI研修を実施。研修費実質0円を実現。</p>
+            <div class="km-works-amount"><span>研修費実質</span>0<span>円</span></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="km-works-more">
+        <a href="/case/">他の実績を見る &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ====================================
+         SECTION: METHOD
+    ==================================== -->
+    <section class="km-method">
+      <div class="km-container">
+        <div class="km-sh">
+          <p class="km-sh-en">METHOD</p>
+          <h2 class="km-sh-title">補助金・AI活用メソッド</h2>
+          <div class="km-sh-line"></div>
+        </div>
+      </div>
+      <div class="km-method-grid">
+
+        <!-- 記事1 -->
+        <a href="/method/it-subsidy-guide-2026/" class="km-method-card">
+          <div class="km-method-thumb">
+            <img src="https://placehold.co/400x160/f5f5f5/6b6b6b?text=IT+Subsidy+Guide" alt="IT導入補助金解説" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="km-method-body">
+            <span class="km-method-cat km-method-cat--subsidy">補助金申請</span>
+            <h3 class="km-method-title">【2026年版】IT導入補助金の申請方法を徹底解説</h3>
+          </div>
+        </a>
+
+        <!-- 記事2 -->
+        <a href="/method/business-plan-writing/" class="km-method-card">
+          <div class="km-method-thumb">
+            <img src="https://placehold.co/400x160/f5f5f5/6b6b6b?text=Business+Plan" alt="事業計画書の書き方" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="km-method-body">
+            <span class="km-method-cat km-method-cat--plan">事業計画</span>
+            <h3 class="km-method-title">補助金申請で採択率を上げる事業計画書の書き方</h3>
+          </div>
+        </a>
+
+        <!-- 記事3 -->
+        <a href="/method/chatgpt-implementation-steps/" class="km-method-card">
+          <div class="km-method-thumb">
+            <img src="https://placehold.co/400x160/f5f5f5/6b6b6b?text=ChatGPT+Steps" alt="ChatGPT導入5ステップ" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="km-method-body">
+            <span class="km-method-cat km-method-cat--ai">AI導入</span>
+            <h3 class="km-method-title">ChatGPTを業務に導入する5つのステップ</h3>
+          </div>
+        </a>
+
+      </div>
+      <div class="km-method-more">
+        <a href="/method/">記事一覧を見る &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ====================================
+         SECTION: FAQ
+    ==================================== -->
+    <section class="km-faq">
+      <div class="km-container">
+        <div class="km-sh">
+          <p class="km-sh-en">FAQ</p>
+          <h2 class="km-sh-title">よくある質問</h2>
+          <div class="km-sh-line"></div>
+        </div>
+      </div>
+      <div class="km-faq-list">
+
+        <div class="km-faq-item">
+          <div class="km-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">着手金はかかりますか？</div>
+          <div class="km-faq-a"><div class="km-faq-a-inner">一切かかりません。成功報酬15%のみです。採択されなければ費用はゼロです。</div></div>
+        </div>
+
+        <div class="km-faq-item">
+          <div class="km-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">どんな補助金が対象ですか？</div>
+          <div class="km-faq-a"><div class="km-faq-a-inner">IT導入補助金、ものづくり補助金、事業再構築補助金、人材開発支援助成金など、主要な制度を全てカバーしています。</div></div>
+        </div>
+
+        <div class="km-faq-item">
+          <div class="km-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">ITベンチャー以外でも申請できますか？</div>
+          <div class="km-faq-a"><div class="km-faq-a-inner">ITベンチャー以外にも対応可能です。特にAI・DX関連の事業を行う企業様に強みがあります。</div></div>
+        </div>
+
+        <div class="km-faq-item">
+          <div class="km-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">申請から採択までどれくらいかかりますか？</div>
+          <div class="km-faq-a"><div class="km-faq-a-inner">補助金の種類によりますが、平均2〜3ヶ月です。</div></div>
+        </div>
+
+        <div class="km-faq-item">
+          <div class="km-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">事業計画書は自分で書く必要がありますか？</div>
+          <div class="km-faq-a"><div class="km-faq-a-inner">いいえ。KMSTが全て代行します。ヒアリングにご協力いただくだけでOKです。</div></div>
+        </div>
+
+        <div class="km-faq-item">
+          <div class="km-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">AI研修は何人から受講可能ですか？</div>
+          <div class="km-faq-a"><div class="km-faq-a-inner">1名からでもお受けいただけます。</div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================
+         SECTION: 底部CTA
+    ==================================== -->
+    <section class="km-cta">
+      <h2>まずは無料相談から。<br>あなたのビジネスに最適な<br>補助金をご提案します。</h2>
+      <p class="km-cta-sub">採択率90%超の実績。着手金ゼロ・完全成功報酬。</p>
+      <div class="km-cta-btns">
+        <a href="/contact/" class="km-btn km-btn--white">無料相談する &rarr;</a>
+        <a href="/contact/" class="km-btn km-btn--outline" style="color:#fff;border-color:rgba(255,255,255,0.5);">お問い合わせはこちら</a>
+      </div>
+      <p class="km-cta-note">※ 相談は無料です。お気軽にお問い合わせください。</p>
+    </section>
+
+  </main>
+
+  <!-- ====================================
+       FOOTER
+  ==================================== -->
+  <footer class="km-footer">
+    <div class="km-footer-inner">
+      <div class="km-footer-brand">
+        <div class="km-logo"><span>KM</span>ST</div>
+        <p>
+          KMST株式会社<br>
+          ITベンチャー特化の補助金コンサルティング<br>
+          AI導入から資金調達まで一貫サポート
+        </p>
+      </div>
+      <div class="km-footer-nav">
+        <h4>サービス</h4>
+        <a href="/service/#subsidy">補助金支援</a>
+        <a href="/service/#ai-implementation">AI導入</a>
+        <a href="/service/#ai-training">AI研修</a>
+        <a href="/pricing/">料金</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>情報</h4>
+        <a href="/case/">実績</a>
+        <a href="/method/">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>サポート</h4>
+        <a href="/contact/">お問い合わせ</a>
+        <a href="/contact/">無料相談</a>
+        <a href="/privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="km-footer-bottom">
+      <span>&copy; 2026 KMST株式会社 All Rights Reserved.</span>
+      <a href="/privacy/">プライバシーポリシー</a>
+    </div>
+  </footer>
+
+  <!-- ====================================
+       固定フッターCTA（モバイル）
+  ==================================== -->
+  <div class="km-fixed-cta">
+    <a href="/contact/" class="km-fc-primary">無料相談する</a>
+    <a href="/pricing/" class="km-fc-secondary">料金を見る</a>
+  </div>
+
+  <!-- ====================================
+       JS: ハンバーガーメニュー toggle
+  ==================================== -->
+  <script>
+  (function(){
+    // ハンバーガーメニューの開閉はonclick属性で処理済み
+    // ESCキーでメニューを閉じる
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        var hamburger = document.querySelector('.km-hamburger');
+        var mobileNav = document.getElementById('km-mobile-nav');
+        if (hamburger && mobileNav) {
+          hamburger.classList.remove('open');
+          mobileNav.classList.remove('open');
+        }
+      }
+    });
+
+    // ヘッダーのスクロール時の背景変化
+    var header = document.querySelector('.km-header');
+    if (header) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) {
+          header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+        } else {
+          header.style.boxShadow = 'none';
+        }
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>

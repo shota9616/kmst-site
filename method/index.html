@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メソッド | KMST株式会社</title>
+  <meta name="description" content="補助金申請のノウハウ、AI導入の実践知を無料公開。IT導入補助金の申請方法、事業計画書の書き方、ChatGPT導入ガイドなど。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+  /* ====================================
+     メソッドページ固有CSS
+  ==================================== */
+
+  /* カテゴリフィルター */
+  .km-filter {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .km-filter-btn {
+    padding: 10px 24px;
+    border: 1px solid var(--km-border, #E8E8E8);
+    border-radius: 50px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--km-text-light, #6B6B6B);
+    cursor: pointer;
+    transition: var(--km-transition, 0.3s ease);
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .km-filter-btn:hover,
+  .km-filter-btn.active {
+    background: var(--km-red, #E53935);
+    color: #fff;
+    border-color: var(--km-red, #E53935);
+  }
+
+  /* 記事一覧 */
+  .km-method {
+    padding: 48px 0 80px;
+    background: #fff;
+  }
+  .km-method-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .km-article-card {
+    display: block;
+    background: #fff;
+    border: 1px solid var(--km-border, #E8E8E8);
+    border-radius: var(--km-radius, 12px);
+    overflow: hidden;
+    transition: var(--km-transition, 0.3s ease);
+    text-decoration: none;
+    color: inherit;
+  }
+  .km-article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--km-shadow, 0 8px 30px rgba(0,0,0,0.08));
+    border-color: transparent;
+  }
+  .km-article-thumb {
+    background: linear-gradient(135deg, #f0f0f5 0%, #e8e8ee 100%);
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 14px;
+  }
+  .km-article-body {
+    padding: 24px;
+  }
+  .km-article-cat {
+    display: inline-block;
+    background: rgba(229,57,53,0.08);
+    color: var(--km-red, #E53935);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .km-article-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--km-navy, #1A1A2E);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .km-article-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--km-text-muted, #9E9E9E);
+  }
+  .km-article-author-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ddd, #eee);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .km-filter {
+      padding: 32px 16px 0;
+      gap: 6px;
+    }
+    .km-filter-btn {
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+    .km-method { padding: 32px 0 48px; }
+    .km-method-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .km-article-thumb { height: 180px; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ====================================
+       ヘッダー
+  ==================================== -->
+  <header class="km-header">
+    <div class="km-header-inner">
+      <a href="/" class="km-logo">KM<span>ST</span></a>
+      <nav class="km-nav">
+        <a href="/service/">サービス</a>
+        <a href="/pricing/">料金</a>
+        <a href="/case/">実績</a>
+        <a href="/method/" class="active">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用</a>
+        <a href="/contact/" class="km-nav-cta">無料相談する</a>
+      </nav>
+      <div class="km-hamburger" onclick="this.classList.toggle('open');document.getElementById('mobileNav').classList.toggle('open');">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <div class="km-mobile-nav" id="mobileNav">
+    <a href="/service/">サービス</a>
+    <a href="/pricing/">料金</a>
+    <a href="/case/">実績</a>
+    <a href="/method/">メソッド</a>
+    <a href="/company/">会社概要</a>
+    <a href="/recruit/">採用</a>
+    <a href="/contact/" class="km-nav-cta">無料相談する</a>
+  </div>
+
+  <!-- ====================================
+       FV: ヒーロー
+  ==================================== -->
+  <section class="km-sv-hero">
+    <p class="km-sv-hero-en">METHOD</p>
+    <h1>補助金・AI活用メソッド</h1>
+    <p class="km-sv-hero-sub">補助金申請のノウハウ、AI導入の実践知を無料公開しています。</p>
+  </section>
+
+  <!-- ====================================
+       カテゴリフィルター
+  ==================================== -->
+  <div class="km-filter">
+    <button class="km-filter-btn active">全て</button>
+    <button class="km-filter-btn">補助金申請</button>
+    <button class="km-filter-btn">AI導入</button>
+    <button class="km-filter-btn">AI研修</button>
+    <button class="km-filter-btn">事業計画</button>
+    <button class="km-filter-btn">お知らせ</button>
+  </div>
+
+  <!-- ====================================
+       記事一覧グリッド
+  ==================================== -->
+  <section class="km-method">
+    <div class="km-method-grid">
+
+      <!-- 記事1 -->
+      <a href="#" class="km-article-card">
+        <div class="km-article-thumb">サムネイル画像</div>
+        <div class="km-article-body">
+          <span class="km-article-cat">補助金申請</span>
+          <h3 class="km-article-title">【2026年版】IT導入補助金の申請方法を徹底解説</h3>
+          <div class="km-article-meta">
+            <div class="km-article-author-img"></div>
+            <span>KMST編集部</span>
+            <span>2026.02.01</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 記事2 -->
+      <a href="#" class="km-article-card">
+        <div class="km-article-thumb">サムネイル画像</div>
+        <div class="km-article-body">
+          <span class="km-article-cat">事業計画</span>
+          <h3 class="km-article-title">補助金申請で採択率を上げる事業計画書の書き方</h3>
+          <div class="km-article-meta">
+            <div class="km-article-author-img"></div>
+            <span>KMST編集部</span>
+            <span>2026.01.25</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 記事3 -->
+      <a href="#" class="km-article-card">
+        <div class="km-article-thumb">サムネイル画像</div>
+        <div class="km-article-body">
+          <span class="km-article-cat">AI導入</span>
+          <h3 class="km-article-title">ChatGPTを業務に導入する5つのステップ</h3>
+          <div class="km-article-meta">
+            <div class="km-article-author-img"></div>
+            <span>KMST編集部</span>
+            <span>2026.01.20</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ====================================
+       CTA
+  ==================================== -->
+  <section class="km-cta" style="background: linear-gradient(135deg, var(--km-red, #E53935) 0%, var(--km-red-dark, #C62828) 100%);">
+    <div class="km-container">
+      <h2>補助金・AI活用のご相談はこちら</h2>
+      <p class="km-cta-sub">御社に最適な補助金・AI活用プランを無料でご提案します。</p>
+      <div class="km-cta-btns">
+        <a href="/contact/" class="km-btn km-btn--white km-btn--lg">無料相談する</a>
+      </div>
+      <p class="km-cta-note">相談は無料です。お気軽にお問い合わせください。</p>
+    </div>
+  </section>
+
+  <!-- ====================================
+       フッター
+  ==================================== -->
+  <footer class="km-footer">
+    <div class="km-footer-inner">
+      <div class="km-footer-brand">
+        <span class="km-logo">KM<span>ST</span></span>
+        <p>KMST株式会社<br>ITベンチャー特化の補助金申請支援 &amp; AI導入コンサルティング<br>〒760-XXXX 香川県高松市XXXXXXX</p>
+      </div>
+      <div class="km-footer-nav">
+        <h4>サービス</h4>
+        <a href="/service/">サービス一覧</a>
+        <a href="/pricing/">料金プラン</a>
+        <a href="/case/">支援実績</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>コンテンツ</h4>
+        <a href="/method/">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用情報</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>お問い合わせ</h4>
+        <a href="/contact/">無料相談</a>
+        <a href="/privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="km-footer-bottom">
+      <p>&copy; 2025 KMST株式会社</p>
+      <a href="/privacy/">プライバシーポリシー</a>
+    </div>
+  </footer>
+
+  <!-- モバイル固定CTA -->
+  <div class="km-fixed-cta">
+    <a href="tel:000-000-0000" class="km-fc-secondary">電話で相談</a>
+    <a href="/contact/" class="km-fc-primary">無料相談する</a>
+  </div>
+
+  <!-- フィルター機能（簡易JS） -->
+  <script>
+  document.querySelectorAll('.km-filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.km-filter-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金 | KMST株式会社</title>
+  <meta name="description" content="KMST株式会社の料金プラン。補助金申請支援は着手金ゼロ・成功報酬15%。不採択時は費用一切なし。AI導入コンサルティング・AI研修の料金も掲載。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* ============================================
+       料金ページ固有CSS
+       プレフィックス: .km-price-
+       ============================================ */
+
+    /* --- ヒーロー --- */
+    .km-price-hero {
+      background: linear-gradient(135deg, var(--km-navy) 0%, var(--km-navy-light) 100%);
+      padding: 140px 0 80px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .km-price-hero::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(229,57,53,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .km-price-hero .km-container {
+      position: relative;
+      z-index: 1;
+    }
+    .km-price-hero-en {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+    .km-price-hero h1 {
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .km-price-hero h1 em {
+      color: var(--km-red-light);
+      font-style: normal;
+    }
+    .km-price-hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+    }
+    .km-price-hero-badge {
+      display: inline-block;
+      background: rgba(229,57,53,0.2);
+      border: 1px solid rgba(229,57,53,0.3);
+      padding: 10px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--km-red-light);
+      margin-top: 8px;
+    }
+
+    /* --- 補助金申請支援の料金 --- */
+    .km-price-subsidy {
+      padding: 100px 0;
+      background: #fff;
+    }
+    .km-price-big-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid var(--km-red);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(229,57,53,0.1);
+    }
+    .km-price-big-head {
+      background: var(--km-red);
+      color: #fff;
+      padding: 24px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .km-price-big-body {
+      padding: 40px 32px;
+    }
+    .km-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .km-price-row:last-child {
+      border-bottom: none;
+    }
+    .km-price-row-label {
+      font-size: 16px;
+      color: var(--km-text-light);
+    }
+    .km-price-row-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--km-red);
+    }
+    .km-price-row-value span {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* 料金シミュレーション */
+    .km-price-sim {
+      max-width: 800px;
+      margin: 32px auto 0;
+      background: var(--km-bg);
+      border-radius: 12px;
+      padding: 28px 32px;
+    }
+    .km-price-sim h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--km-navy);
+      margin-bottom: 16px;
+    }
+    .km-price-sim-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      font-size: 15px;
+    }
+    .km-price-sim-row + .km-price-sim-row {
+      border-top: 1px solid var(--km-border);
+    }
+    .km-price-sim-label {
+      color: var(--km-text-light);
+    }
+    .km-price-sim-value {
+      font-weight: 700;
+      color: var(--km-navy);
+    }
+    .km-price-sim-row--free .km-price-sim-value {
+      color: var(--km-red);
+      font-size: 18px;
+    }
+
+    /* --- 他社との料金比較 --- */
+    .km-price-compare {
+      padding: 100px 0;
+      background: var(--km-bg);
+    }
+    .km-price-compare-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .km-price-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--km-shadow-sm);
+    }
+    .km-price-compare-table th {
+      padding: 18px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .km-price-compare-table th:first-child {
+      text-align: left;
+      background: #f5f5f5;
+      color: var(--km-text-light);
+    }
+    .km-price-compare-table th:nth-child(2) {
+      background: #f5f5f5;
+      color: var(--km-text-light);
+    }
+    .km-price-compare-table th:last-child {
+      background: var(--km-red);
+      color: #fff;
+    }
+    .km-price-compare-table td {
+      padding: 18px 24px;
+      font-size: 14px;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .km-price-compare-table td:first-child {
+      text-align: left;
+      color: var(--km-text-light);
+    }
+    .km-price-compare-table td:last-child {
+      font-weight: 700;
+      color: var(--km-red);
+    }
+    .km-price-compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* --- AI導入コンサルティング料金 --- */
+    .km-price-ai {
+      padding: 100px 0;
+      background: #fff;
+    }
+    .km-price-ai-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .km-price-ai-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--km-shadow-sm);
+      border: 1px solid var(--km-border);
+    }
+    .km-price-ai-table thead th {
+      padding: 16px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--km-navy);
+      color: #fff;
+      text-align: center;
+    }
+    .km-price-ai-table thead th:first-child {
+      text-align: left;
+    }
+    .km-price-ai-table td {
+      padding: 20px 24px;
+      font-size: 15px;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .km-price-ai-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--km-navy);
+    }
+    .km-price-ai-table tr:last-child td {
+      border-bottom: none;
+    }
+    .km-price-ai-table .km-price-ai-note {
+      font-size: 13px;
+      color: var(--km-text-light);
+      font-weight: 400;
+      display: block;
+      margin-top: 4px;
+    }
+    .km-price-ai-table .km-price-ai-highlight {
+      color: var(--km-red);
+      font-weight: 700;
+    }
+
+    /* --- AI研修サービス料金 --- */
+    .km-price-training {
+      padding: 100px 0;
+      background: var(--km-bg);
+    }
+    .km-price-plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .km-price-plan {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--km-shadow-sm);
+      transition: var(--km-transition);
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+    }
+    .km-price-plan:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--km-shadow);
+    }
+    .km-price-plan--featured {
+      border-color: var(--km-red);
+      position: relative;
+    }
+    .km-price-plan-badge {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--km-red);
+      color: #fff;
+      padding: 4px 20px;
+      border-radius: 0 0 8px 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .km-price-plan-head {
+      padding: 32px 24px 24px;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .km-price-plan-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--km-navy);
+      margin-bottom: 8px;
+    }
+    .km-price-plan-lectures {
+      font-size: 14px;
+      color: var(--km-text-light);
+      margin-bottom: 16px;
+    }
+    .km-price-plan-amount {
+      font-family: 'Outfit', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--km-navy);
+      line-height: 1;
+    }
+    .km-price-plan-amount span {
+      font-size: 16px;
+      font-weight: 500;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .km-price-plan--featured .km-price-plan-amount {
+      color: var(--km-red);
+    }
+    .km-price-plan-unit {
+      font-size: 14px;
+      color: var(--km-text-light);
+      margin-top: 4px;
+    }
+    .km-price-plan-body {
+      padding: 24px;
+      flex: 1;
+    }
+    .km-price-plan-body ul {
+      list-style: none;
+      padding: 0;
+    }
+    .km-price-plan-body li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: var(--km-text);
+      line-height: 1.6;
+    }
+    .km-price-plan-body li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--km-red);
+      font-weight: 700;
+    }
+    .km-price-plan-foot {
+      padding: 0 24px 24px;
+      text-align: center;
+    }
+    .km-price-plan-foot .km-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* --- FAQ --- */
+    .km-price-faq {
+      padding: 100px 0;
+      background: #fff;
+    }
+    .km-price-faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .km-price-faq-item {
+      border: 1px solid var(--km-border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: var(--km-transition);
+    }
+    .km-price-faq-item:hover {
+      border-color: rgba(229,57,53,0.3);
+    }
+    .km-price-faq-q {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      cursor: pointer;
+      background: #fff;
+      transition: var(--km-transition);
+      user-select: none;
+    }
+    .km-price-faq-q:hover {
+      background: var(--km-bg);
+    }
+    .km-price-faq-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(229,57,53,0.1);
+      color: var(--km-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .km-price-faq-text {
+      flex: 1;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--km-navy);
+    }
+    .km-price-faq-toggle {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      position: relative;
+      transition: var(--km-transition);
+    }
+    .km-price-faq-toggle::before,
+    .km-price-faq-toggle::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: var(--km-text-light);
+      border-radius: 1px;
+      transition: var(--km-transition);
+    }
+    .km-price-faq-toggle::before {
+      width: 14px;
+      height: 2px;
+      transform: translate(-50%, -50%);
+    }
+    .km-price-faq-toggle::after {
+      width: 2px;
+      height: 14px;
+      transform: translate(-50%, -50%);
+    }
+    .km-price-faq-item.open .km-price-faq-toggle::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      opacity: 0;
+    }
+    .km-price-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .km-price-faq-item.open .km-price-faq-a {
+      max-height: 300px;
+    }
+    .km-price-faq-a-inner {
+      padding: 0 24px 20px 72px;
+      font-size: 14px;
+      color: var(--km-text-light);
+      line-height: 1.8;
+    }
+
+    /* --- レスポンシブ --- */
+    @media (max-width: 768px) {
+      .km-price-hero {
+        padding: 100px 0 60px;
+      }
+      .km-price-hero h1 {
+        font-size: 28px;
+      }
+      .km-price-hero-sub {
+        font-size: 15px;
+      }
+      .km-price-hero-badge {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+      .km-price-subsidy,
+      .km-price-compare,
+      .km-price-ai,
+      .km-price-training,
+      .km-price-faq {
+        padding: 60px 0;
+      }
+      .km-price-big-body {
+        padding: 24px 20px;
+      }
+      .km-price-row-value {
+        font-size: 24px;
+      }
+      .km-price-sim {
+        padding: 20px;
+      }
+      .km-price-sim-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .km-price-compare-table th,
+      .km-price-compare-table td {
+        padding: 12px 12px;
+        font-size: 13px;
+      }
+      .km-price-ai-table thead th,
+      .km-price-ai-table td {
+        padding: 12px 12px;
+        font-size: 13px;
+      }
+      .km-price-plans {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+      .km-price-plan-badge {
+        position: static;
+        transform: none;
+        display: block;
+        text-align: center;
+        border-radius: 0;
+      }
+      .km-price-faq-a-inner {
+        padding-left: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== ヘッダー ========== -->
+  <header class="km-header">
+    <div class="km-header-inner">
+      <a href="/" class="km-logo">KM<span>ST</span></a>
+      <nav class="km-nav">
+        <a href="/service/">サービス</a>
+        <a href="/pricing/" class="active">料金</a>
+        <a href="/case/">実績</a>
+        <a href="/method/">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用</a>
+        <a href="/contact/" class="km-nav-cta">無料相談する</a>
+      </nav>
+      <div class="km-hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <div class="km-mobile-nav" id="mobileNav">
+    <a href="/service/" onclick="toggleMenu()">サービス</a>
+    <a href="/pricing/" onclick="toggleMenu()">料金</a>
+    <a href="/case/" onclick="toggleMenu()">実績</a>
+    <a href="/method/" onclick="toggleMenu()">メソッド</a>
+    <a href="/company/" onclick="toggleMenu()">会社概要</a>
+    <a href="/recruit/" onclick="toggleMenu()">採用</a>
+    <a href="/contact/" class="km-nav-cta" onclick="toggleMenu()">無料相談する</a>
+  </div>
+
+  <!-- ========== ヒーロー ========== -->
+  <section class="km-price-hero">
+    <div class="km-container">
+      <p class="km-price-hero-en">PRICING</p>
+      <h1>着手金<em>ゼロ</em>、成功報酬<em>15</em>%。</h1>
+      <p class="km-price-hero-sub">採択されなければ、費用は一切かかりません。</p>
+      <div class="km-price-hero-badge">料金を明示している補助金コンサルは、業界でKMSTだけです。</div>
+    </div>
+  </section>
+
+  <!-- ========== 補助金申請支援の料金 ========== -->
+  <section class="km-price-subsidy">
+    <div class="km-container">
+      <div class="km-sh">
+        <p class="km-sh-en">SUBSIDY SUPPORT</p>
+        <h2 class="km-sh-title">補助金申請支援の料金</h2>
+        <div class="km-sh-line"></div>
+      </div>
+
+      <div class="km-price-big-card">
+        <div class="km-price-big-head">補助金申請支援</div>
+        <div class="km-price-big-body">
+          <div class="km-price-row">
+            <div class="km-price-row-label">着手金</div>
+            <div class="km-price-row-value">0<span>円</span></div>
+          </div>
+          <div class="km-price-row">
+            <div class="km-price-row-label">成功報酬</div>
+            <div class="km-price-row-value">15<span>%</span></div>
+          </div>
+          <div class="km-price-row">
+            <div class="km-price-row-label">不採択時</div>
+            <div class="km-price-row-value">0<span>円</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="km-price-sim">
+        <h3>料金シミュレーション</h3>
+        <div class="km-price-sim-row">
+          <span class="km-price-sim-label">採択額 3,000万円の場合</span>
+          <span class="km-price-sim-value">成功報酬：450万円</span>
+        </div>
+        <div class="km-price-sim-row">
+          <span class="km-price-sim-label">採択額 5,000万円の場合</span>
+          <span class="km-price-sim-value">成功報酬：750万円</span>
+        </div>
+        <div class="km-price-sim-row km-price-sim-row--free">
+          <span class="km-price-sim-label">不採択の場合</span>
+          <span class="km-price-sim-value">完全無料</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 他社との料金比較 ========== -->
+  <section class="km-price-compare">
+    <div class="km-container">
+      <div class="km-sh">
+        <p class="km-sh-en">COMPARISON</p>
+        <h2 class="km-sh-title">他社との料金比較</h2>
+        <div class="km-sh-line"></div>
+      </div>
+
+      <div class="km-price-compare-wrap">
+        <table class="km-price-compare-table">
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>一般的なコンサル</th>
+              <th>KMST</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>着手金</td>
+              <td>10〜30万円</td>
+              <td>0円</td>
+            </tr>
+            <tr>
+              <td>成功報酬</td>
+              <td>非公開（要相談）</td>
+              <td>採択額の15%</td>
+            </tr>
+            <tr>
+              <td>不採択時</td>
+              <td>着手金は返金されない</td>
+              <td>完全無料</td>
+            </tr>
+            <tr>
+              <td>料金の透明性</td>
+              <td>要問い合わせ</td>
+              <td>完全公開</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI導入コンサルティング料金 ========== -->
+  <section class="km-price-ai">
+    <div class="km-container">
+      <div class="km-sh">
+        <p class="km-sh-en">AI CONSULTING</p>
+        <h2 class="km-sh-title">AI導入コンサルティング料金</h2>
+        <div class="km-sh-line"></div>
+      </div>
+
+      <div class="km-price-ai-wrap">
+        <table class="km-price-ai-table">
+          <thead>
+            <tr>
+              <th>サービス内容</th>
+              <th>通常価格</th>
+              <th>補助金活用時</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                AI導入コンサルティング
+                <span class="km-price-ai-note">要件定義・ツール選定・導入支援</span>
+              </td>
+              <td>100〜300万円</td>
+              <td class="km-price-ai-highlight">25〜75万円</td>
+            </tr>
+            <tr>
+              <td>
+                補助金申請サポート
+                <span class="km-price-ai-note">事業計画書作成・申請手続き</span>
+              </td>
+              <td>着手金0円</td>
+              <td class="km-price-ai-highlight">成功報酬15%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI研修サービス料金 ========== -->
+  <section class="km-price-training">
+    <div class="km-container">
+      <div class="km-sh">
+        <p class="km-sh-en">AI TRAINING</p>
+        <h2 class="km-sh-title">AI研修サービス料金</h2>
+        <div class="km-sh-line"></div>
+      </div>
+
+      <div class="km-price-plans">
+        <!-- ベーシック -->
+        <div class="km-price-plan">
+          <div class="km-price-plan-head">
+            <div class="km-price-plan-name">ベーシック</div>
+            <div class="km-price-plan-lectures">全5講座</div>
+            <div class="km-price-plan-amount">5<span>万円</span></div>
+            <div class="km-price-plan-unit">税別 / 1名あたり</div>
+          </div>
+          <div class="km-price-plan-body">
+            <ul>
+              <li>ChatGPT基礎操作</li>
+              <li>プロンプト設計入門</li>
+              <li>業務活用ケーススタディ</li>
+              <li>オンライン受講対応</li>
+              <li>修了証発行</li>
+            </ul>
+          </div>
+          <div class="km-price-plan-foot">
+            <a href="/contact/" class="km-btn km-btn--outline">お問い合わせ</a>
+          </div>
+        </div>
+
+        <!-- スタンダード -->
+        <div class="km-price-plan km-price-plan--featured">
+          <span class="km-price-plan-badge">人気No.1</span>
+          <div class="km-price-plan-head">
+            <div class="km-price-plan-name">スタンダード</div>
+            <div class="km-price-plan-lectures">全10講座</div>
+            <div class="km-price-plan-amount">10<span>万円</span></div>
+            <div class="km-price-plan-unit">税別 / 1名あたり</div>
+          </div>
+          <div class="km-price-plan-body">
+            <ul>
+              <li>ベーシック内容すべて</li>
+              <li>Claude / Gemini比較実習</li>
+              <li>部門別カスタマイズ研修</li>
+              <li>実務ワークショップ</li>
+              <li>1ヶ月間のチャットサポート</li>
+            </ul>
+          </div>
+          <div class="km-price-plan-foot">
+            <a href="/contact/" class="km-btn km-btn--red">無料相談する</a>
+          </div>
+        </div>
+
+        <!-- プレミアム -->
+        <div class="km-price-plan">
+          <div class="km-price-plan-head">
+            <div class="km-price-plan-name">プレミアム</div>
+            <div class="km-price-plan-lectures">全25講座</div>
+            <div class="km-price-plan-amount">25<span>万円</span></div>
+            <div class="km-price-plan-unit">税別 / 1名あたり</div>
+          </div>
+          <div class="km-price-plan-body">
+            <ul>
+              <li>スタンダード内容すべて</li>
+              <li>AI戦略立案ワークショップ</li>
+              <li>社内AI推進リーダー育成</li>
+              <li>カスタムAIツール構築実習</li>
+              <li>3ヶ月間の伴走サポート</li>
+            </ul>
+          </div>
+          <div class="km-price-plan-foot">
+            <a href="/contact/" class="km-btn km-btn--outline">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="km-price-faq">
+    <div class="km-container">
+      <div class="km-sh">
+        <p class="km-sh-en">FAQ</p>
+        <h2 class="km-sh-title">よくあるご質問</h2>
+        <div class="km-sh-line"></div>
+      </div>
+
+      <div class="km-price-faq-list">
+        <div class="km-price-faq-item">
+          <div class="km-price-faq-q" onclick="toggleFaq(this)">
+            <div class="km-price-faq-icon">Q</div>
+            <div class="km-price-faq-text">着手金は本当にかからないのですか？</div>
+            <div class="km-price-faq-toggle"></div>
+          </div>
+          <div class="km-price-faq-a">
+            <div class="km-price-faq-a-inner">
+              はい、着手金は一切いただいておりません。補助金が採択された場合にのみ、交付決定額の15%を成功報酬としてお支払いいただきます。採択されなかった場合は、費用は完全に無料です。
+            </div>
+          </div>
+        </div>
+
+        <div class="km-price-faq-item">
+          <div class="km-price-faq-q" onclick="toggleFaq(this)">
+            <div class="km-price-faq-icon">Q</div>
+            <div class="km-price-faq-text">成功報酬はいつ支払うのですか？</div>
+            <div class="km-price-faq-toggle"></div>
+          </div>
+          <div class="km-price-faq-a">
+            <div class="km-price-faq-a-inner">
+              成功報酬のお支払いは、補助金の交付決定通知を受け取った後にお願いしております。補助金が実際にお客様の口座に入金される前のタイミングですが、交付決定後のため安心してお支払いいただけます。
+            </div>
+          </div>
+        </div>
+
+        <div class="km-price-faq-item">
+          <div class="km-price-faq-q" onclick="toggleFaq(this)">
+            <div class="km-price-faq-icon">Q</div>
+            <div class="km-price-faq-text">成功報酬以外に追加費用はかかりますか？</div>
+            <div class="km-price-faq-toggle"></div>
+          </div>
+          <div class="km-price-faq-a">
+            <div class="km-price-faq-a-inner">
+              補助金申請支援においては、成功報酬の15%以外に追加費用はかかりません。事業計画書の作成、申請手続きのサポート、採択後のフォローアップまですべて含まれています。別途コンサルティングやAI導入支援をご依頼いただく場合は、個別にお見積もりいたします。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="km-cta">
+    <div class="km-container">
+      <h2>まずは無料相談から。</h2>
+      <p class="km-cta-sub">補助金の活用方法やAI導入について、お気軽にご相談ください。</p>
+      <div class="km-cta-btns">
+        <a href="/contact/" class="km-btn km-btn--white km-btn--lg">無料相談する</a>
+        <a href="/service/" class="km-btn km-btn--outline km-btn--lg" style="border-color:#fff;color:#fff;">サービス一覧</a>
+      </div>
+      <p class="km-cta-note">※ 相談は完全無料です。お気軽にお問い合わせください。</p>
+    </div>
+  </section>
+
+  <!-- ========== フッター ========== -->
+  <footer class="km-footer">
+    <div class="km-footer-inner">
+      <div class="km-footer-brand">
+        <a href="/" class="km-logo">KM<span>ST</span></a>
+        <p>制度とテクノロジーで<br>中小企業の成果を作る。</p>
+      </div>
+      <div class="km-footer-nav">
+        <h4>サービス</h4>
+        <a href="/service/">サービス一覧</a>
+        <a href="/pricing/">料金</a>
+        <a href="/case/">実績</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>情報</h4>
+        <a href="/method/">メソッド</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用</a>
+      </div>
+      <div class="km-footer-nav">
+        <h4>お問い合わせ</h4>
+        <a href="/contact/">無料相談</a>
+        <a href="/privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="km-footer-bottom">
+      <span>&copy; 2025 KMST Inc. All rights reserved.</span>
+      <a href="/privacy/">プライバシーポリシー</a>
+    </div>
+  </footer>
+
+  <!-- 固定フッターCTA（モバイル） -->
+  <div class="km-fixed-cta">
+    <a href="tel:000-0000-0000" class="km-fc-secondary">電話で相談</a>
+    <a href="/contact/" class="km-fc-primary">無料相談する</a>
+  </div>
+
+  <!-- ========== JavaScript ========== -->
+  <script>
+    // ハンバーガーメニュー
+    function toggleMenu() {
+      var hamburger = document.querySelector('.km-hamburger');
+      var mobileNav = document.getElementById('mobileNav');
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    // FAQアコーディオン
+    function toggleFaq(el) {
+      var item = el.parentElement;
+      var isOpen = item.classList.contains('open');
+
+      // 他のFAQを閉じる
+      var allItems = document.querySelectorAll('.km-price-faq-item');
+      for (var i = 0; i < allItems.length; i++) {
+        allItems[i].classList.remove('open');
+      }
+
+      // クリックしたアイテムをトグル
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+
+    // ヘッダースクロールエフェクト
+    window.addEventListener('scroll', function() {
+      var header = document.querySelector('.km-header');
+      if (window.scrollY > 10) {
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

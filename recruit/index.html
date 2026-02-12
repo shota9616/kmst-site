@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報 | KMST株式会社</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* ===== 採用ページ固有CSS ===== */
+
+/* --- FV --- */
+.km-recruit-fv {
+  background: linear-gradient(135deg, var(--km-navy) 0%, #0D0D1A 60%, var(--km-navy-light) 100%);
+  padding: 160px 0 80px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.km-recruit-fv::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(229,57,53,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.km-recruit-fv-en {
+  font-family: 'Outfit', sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  color: rgba(255,255,255,0.05);
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.km-recruit-fv h1 {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  position: relative;
+}
+.km-recruit-fv h1 em {
+  color: var(--km-red-light);
+  font-style: normal;
+}
+.km-recruit-fv-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.8;
+}
+.km-recruit-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.km-recruit-num {
+  text-align: center;
+}
+.km-recruit-num-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--km-red-light);
+  line-height: 1.1;
+}
+.km-recruit-num-value span {
+  font-size: 20px;
+  font-weight: 600;
+}
+.km-recruit-num-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+/* --- 3つの魅力 --- */
+.km-recruit-appeal {
+  padding: 100px 0;
+  background: var(--km-bg);
+}
+.km-appeal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.km-appeal-card {
+  background: #fff;
+  border-radius: var(--km-radius);
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: var(--km-shadow-sm);
+  transition: var(--km-transition);
+}
+.km-appeal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--km-shadow);
+}
+.km-appeal-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--km-bg-warm);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 32px;
+}
+.km-appeal-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--km-navy);
+  margin-bottom: 12px;
+}
+.km-appeal-card p {
+  font-size: 14px;
+  color: var(--km-text-light);
+  line-height: 1.8;
+}
+
+/* --- キャリアパス --- */
+.km-career {
+  padding: 100px 0;
+  background: #fff;
+}
+.km-timeline {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 40px;
+}
+.km-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--km-red), var(--km-red-light));
+}
+.km-timeline-item {
+  position: relative;
+  padding: 0 0 48px 32px;
+}
+.km-timeline-item:last-child {
+  padding-bottom: 0;
+}
+.km-timeline-dot {
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background: var(--km-red);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--km-red);
+}
+.km-timeline-year {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--km-red);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.km-timeline-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--km-navy);
+  margin-bottom: 8px;
+}
+.km-timeline-item p {
+  font-size: 14px;
+  color: var(--km-text-light);
+  line-height: 1.8;
+}
+
+/* --- 1日の流れ --- */
+.km-daily {
+  padding: 100px 0;
+  background: var(--km-bg);
+}
+.km-daily-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+.km-daily-tab {
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--km-border);
+  background: #fff;
+  color: var(--km-text-light);
+  transition: var(--km-transition);
+}
+.km-daily-tab.active {
+  background: var(--km-red);
+  color: #fff;
+  border-color: var(--km-red);
+}
+.km-daily-content {
+  display: none;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.km-daily-content.active {
+  display: block;
+}
+.km-daily-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--km-border);
+}
+.km-daily-row:last-child {
+  border-bottom: none;
+}
+.km-daily-time {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--km-red);
+  min-width: 60px;
+  flex-shrink: 0;
+}
+.km-daily-desc h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--km-navy);
+  margin-bottom: 4px;
+}
+.km-daily-desc p {
+  font-size: 13px;
+  color: var(--km-text-light);
+}
+
+/* --- 社員インタビュー --- */
+.km-interview {
+  padding: 100px 0;
+  background: #fff;
+}
+.km-interview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.km-interview-card {
+  background: #fff;
+  border-radius: var(--km-radius);
+  box-shadow: var(--km-shadow-sm);
+  overflow: hidden;
+  transition: var(--km-transition);
+}
+.km-interview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--km-shadow);
+}
+.km-interview-photo {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, var(--km-navy) 0%, var(--km-navy-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 48px;
+}
+.km-interview-body {
+  padding: 28px 24px;
+}
+.km-interview-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--km-bg-warm);
+  color: var(--km-red);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.km-interview-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--km-navy);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.km-interview-meta {
+  font-size: 13px;
+  color: var(--km-text-muted);
+  margin-bottom: 12px;
+}
+.km-interview-card > .km-interview-body p:last-child {
+  font-size: 14px;
+  color: var(--km-text-light);
+  line-height: 1.8;
+}
+
+/* --- 募集要項 --- */
+.km-positions {
+  padding: 100px 0;
+  background: var(--km-bg);
+}
+.km-positions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.km-position-card {
+  background: #fff;
+  border-radius: var(--km-radius);
+  box-shadow: var(--km-shadow-sm);
+  overflow: hidden;
+}
+.km-position-header {
+  background: var(--km-navy);
+  color: #fff;
+  padding: 24px 32px;
+}
+.km-position-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+.km-position-header p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+.km-position-table {
+  padding: 8px 32px 32px;
+}
+.km-position-table table {
+  width: 100%;
+}
+.km-position-table th,
+.km-position-table td {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--km-border);
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+}
+.km-position-table th {
+  font-weight: 700;
+  color: var(--km-navy);
+  width: 120px;
+  white-space: nowrap;
+}
+.km-position-table td {
+  color: var(--km-text-light);
+  line-height: 1.8;
+}
+.km-position-table tr:last-child th,
+.km-position-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- CTA --- */
+.km-recruit-cta {
+  background: linear-gradient(135deg, var(--km-red) 0%, #C62828 100%);
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+}
+.km-recruit-cta-lead {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+}
+.km-recruit-cta h2 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+.km-recruit-cta-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 40px;
+}
+.km-recruit-cta-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.km-recruit-cta-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 768px) {
+  .km-recruit-fv { padding: 120px 0 60px; }
+  .km-recruit-fv-en { font-size: 40px; top: 80px; }
+  .km-recruit-fv h1 { font-size: 26px; }
+  .km-recruit-numbers { flex-direction: column; gap: 24px; }
+  .km-recruit-num-value { font-size: 36px; }
+  .km-appeal-grid { grid-template-columns: 1fr; }
+  .km-appeal-card { padding: 36px 24px; }
+  .km-timeline { padding-left: 32px; }
+  .km-daily-tabs { flex-direction: column; align-items: center; }
+  .km-daily-row { flex-direction: column; gap: 8px; }
+  .km-daily-time { min-width: auto; }
+  .km-interview-grid { grid-template-columns: 1fr; }
+  .km-positions-grid { grid-template-columns: 1fr; }
+  .km-position-table { padding: 8px 20px 24px; }
+  .km-position-header { padding: 20px; }
+  .km-recruit-cta h2 { font-size: 24px; }
+  .km-recruit-cta-btns { flex-direction: column; align-items: center; }
+  .km-recruit-cta-btns .km-btn { width: 100%; max-width: 320px; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="km-header">
+  <div class="km-header-inner">
+    <a href="/" class="km-logo">KMS<span>T</span></a>
+    <nav class="km-nav">
+      <a href="/service/">サービス</a>
+      <a href="/pricing/">料金</a>
+      <a href="/case/">実績</a>
+      <a href="/method/">メソッド</a>
+      <a href="/company/">会社概要</a>
+      <a href="/recruit/" class="active">採用</a>
+      <a href="/contact/" class="km-nav-cta">無料相談する</a>
+    </nav>
+    <div class="km-hamburger" id="js-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== モバイルナビ ===== -->
+<nav class="km-mobile-nav" id="js-mobile-nav">
+  <a href="/service/">サービス</a>
+  <a href="/pricing/">料金</a>
+  <a href="/case/">実績</a>
+  <a href="/method/">メソッド</a>
+  <a href="/company/">会社概要</a>
+  <a href="/recruit/">採用</a>
+  <a href="/contact/" class="km-nav-cta">無料相談する</a>
+</nav>
+
+<!-- ===== FV ===== -->
+<section class="km-recruit-fv">
+  <div class="km-recruit-fv-en">RECRUIT</div>
+  <div class="km-container">
+    <h1>スタートアップの夢を、<br><em>あなたの仕事に。</em></h1>
+    <p class="km-recruit-fv-sub">制度とテクノロジーで中小企業を支援する。<br>私たちと一緒に、日本の未来を変えませんか。</p>
+    <div class="km-recruit-numbers">
+      <div class="km-recruit-num">
+        <div class="km-recruit-num-value">80<span>%</span></div>
+        <div class="km-recruit-num-label">未経験入社の割合</div>
+      </div>
+      <div class="km-recruit-num">
+        <div class="km-recruit-num-value">28<span>歳</span></div>
+        <div class="km-recruit-num-label">社員の平均年齢</div>
+      </div>
+      <div class="km-recruit-num">
+        <div class="km-recruit-num-value">90<span>%</span></div>
+        <div class="km-recruit-num-label">有給消化率</div>
+      </div>
+    </div>
+    <a href="#positions" class="km-btn km-btn--white km-btn--lg">募集要項を見る</a>
+  </div>
+</section>
+
+<!-- ===== 3つの魅力 ===== -->
+<section class="km-recruit-appeal">
+  <div class="km-container">
+    <div class="km-sh">
+      <div class="km-sh-en">WHY KMST?</div>
+      <h2 class="km-sh-title">KMSTで働く3つの魅力</h2>
+      <div class="km-sh-line"></div>
+    </div>
+    <div class="km-appeal-grid">
+      <div class="km-appeal-card">
+        <div class="km-appeal-icon">&#128200;</div>
+        <h3>成長市場で働ける</h3>
+        <p>補助金 x AI というマーケットは急拡大中。業界の最前線で、社会的意義のある仕事に携われます。今後も高い需要が見込まれる分野で、キャリアの市場価値を高められます。</p>
+      </div>
+      <div class="km-appeal-card">
+        <div class="km-appeal-icon">&#127891;</div>
+        <h3>未経験から専門家へ</h3>
+        <p>入社後の研修プログラムで、補助金制度やAI技術の基礎をしっかり学べます。OJTと座学のハイブリッドで、未経験でも半年で独り立ちできる育成体制を整えています。</p>
+      </div>
+      <div class="km-appeal-card">
+        <div class="km-appeal-icon">&#9996;</div>
+        <h3>働きやすさを追求</h3>
+        <p>有給消化率90%、フレックスタイム制、リモートワーク可。成果で評価する文化だから、メリハリをつけて働けます。チーム全員で助け合う風土が根付いています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== キャリアパス ===== -->
+<section class="km-career">
+  <div class="km-container">
+    <div class="km-sh">
+      <div class="km-sh-en">CAREER PATH</div>
+      <h2 class="km-sh-title">キャリアパス</h2>
+      <div class="km-sh-line"></div>
+    </div>
+    <div class="km-timeline">
+      <div class="km-timeline-item">
+        <div class="km-timeline-dot"></div>
+        <div class="km-timeline-year">STEP 01</div>
+        <h3>スタッフ</h3>
+        <p>入社1年目。研修を経て基本業務を習得します。先輩社員のサポートのもと、クライアント対応や書類作成の実務経験を積みます。</p>
+      </div>
+      <div class="km-timeline-item">
+        <div class="km-timeline-dot"></div>
+        <div class="km-timeline-year">STEP 02</div>
+        <h3>サブリーダー</h3>
+        <p>入社2〜3年目。案件のメイン担当として活躍。後輩の育成にも関わりながら、専門スキルを深めていきます。</p>
+      </div>
+      <div class="km-timeline-item">
+        <div class="km-timeline-dot"></div>
+        <div class="km-timeline-year">STEP 03</div>
+        <h3>マネージャー</h3>
+        <p>入社3〜5年目。チームの管理・運営を担います。戦略立案やクライアントとの折衝など、経営に近いポジションで力を発揮します。</p>
+      </div>
+      <div class="km-timeline-item">
+        <div class="km-timeline-dot"></div>
+        <div class="km-timeline-year">STEP 04</div>
+        <h3>ディレクター</h3>
+        <p>事業部門の責任者として、事業戦略の策定や新規サービスの立ち上げをリード。経営幹部として会社の成長を牽引します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1日の流れ ===== -->
+<section class="km-daily">
+  <div class="km-container">
+    <div class="km-sh">
+      <div class="km-sh-en">DAILY SCHEDULE</div>
+      <h2 class="km-sh-title">1日の流れ</h2>
+      <div class="km-sh-line"></div>
+    </div>
+    <div class="km-daily-tabs">
+      <button class="km-daily-tab active" data-tab="sales">営業職</button>
+      <button class="km-daily-tab" data-tab="office">事務職</button>
+    </div>
+    <div class="km-daily-content active" id="tab-sales">
+      <div class="km-daily-row">
+        <div class="km-daily-time">9:00</div>
+        <div class="km-daily-desc">
+          <h4>出社・朝礼</h4>
+          <p>チームで当日のスケジュールを共有。案件の進捗を確認します。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">9:30</div>
+        <div class="km-daily-desc">
+          <h4>メール・問い合わせ対応</h4>
+          <p>新規のお問い合わせや既存クライアントからの連絡に対応します。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">10:30</div>
+        <div class="km-daily-desc">
+          <h4>クライアントとのオンライン商談</h4>
+          <p>補助金活用のご提案や、AI導入に関するヒアリングを行います。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">12:00</div>
+        <div class="km-daily-desc">
+          <h4>ランチ</h4>
+          <p>チームメンバーと近くのお店へ。情報交換の場にもなっています。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">13:00</div>
+        <div class="km-daily-desc">
+          <h4>提案資料の作成</h4>
+          <p>午前の商談内容をもとに、補助金申請の提案書を作成します。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">15:00</div>
+        <div class="km-daily-desc">
+          <h4>訪問またはオンライン面談（2件目）</h4>
+          <p>新規のお客様へのご説明や、進行中案件のフォローアップを行います。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">17:00</div>
+        <div class="km-daily-desc">
+          <h4>日報作成・翌日準備</h4>
+          <p>活動記録の入力と、翌日の訪問準備を行います。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">18:00</div>
+        <div class="km-daily-desc">
+          <h4>退社</h4>
+          <p>定時退社が基本。必要に応じて残業しますが、月平均20時間以下です。</p>
+        </div>
+      </div>
+    </div>
+    <div class="km-daily-content" id="tab-office">
+      <div class="km-daily-row">
+        <div class="km-daily-time">9:00</div>
+        <div class="km-daily-desc">
+          <h4>出社・メールチェック</h4>
+          <p>申請書類の進捗や官公庁からの連絡を確認します。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">9:30</div>
+        <div class="km-daily-desc">
+          <h4>申請書類の作成・チェック</h4>
+          <p>補助金申請に必要な書類の作成・校正を行います。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">11:00</div>
+        <div class="km-daily-desc">
+          <h4>営業チームとの打ち合わせ</h4>
+          <p>案件の進捗共有と、必要書類の確認を行います。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">12:00</div>
+        <div class="km-daily-desc">
+          <h4>ランチ</h4>
+          <p>社内で食べることも、外に出ることも自由です。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">13:00</div>
+        <div class="km-daily-desc">
+          <h4>データ入力・管理業務</h4>
+          <p>クライアント情報やプロジェクトの進捗をシステムに入力します。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">15:00</div>
+        <div class="km-daily-desc">
+          <h4>官公庁への問い合わせ・確認</h4>
+          <p>申請内容の不明点を事務局に確認し、書類を修正します。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">16:30</div>
+        <div class="km-daily-desc">
+          <h4>翌日のタスク整理</h4>
+          <p>申請期限を確認し、優先順位を整理します。</p>
+        </div>
+      </div>
+      <div class="km-daily-row">
+        <div class="km-daily-time">18:00</div>
+        <div class="km-daily-desc">
+          <h4>退社</h4>
+          <p>定時退社が基本。繁忙期以外はほぼ定時で帰れます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 社員インタビュー ===== -->
+<section class="km-interview">
+  <div class="km-container">
+    <div class="km-sh">
+      <div class="km-sh-en">INTERVIEW</div>
+      <h2 class="km-sh-title">社員インタビュー</h2>
+      <div class="km-sh-line"></div>
+    </div>
+    <div class="km-interview-grid">
+      <div class="km-interview-card">
+        <div class="km-interview-photo">&#128104;</div>
+        <div class="km-interview-body">
+          <span class="km-interview-tag">元保育士</span>
+          <h3>「人を支える仕事」は同じだった</h3>
+          <p class="km-interview-meta">A.S.さん ｜ 営業職 ｜ 入社2年目</p>
+          <p>保育士から転職して最初は不安でしたが、研修が手厚く半年で独り立ちできました。子どもの成長を支えていた経験が、今は中小企業の成長を支える仕事に活きています。</p>
+        </div>
+      </div>
+      <div class="km-interview-card">
+        <div class="km-interview-photo">&#128105;</div>
+        <div class="km-interview-body">
+          <span class="km-interview-tag">元ホテルスタッフ</span>
+          <h3>接客スキルが武器になった</h3>
+          <p class="km-interview-meta">M.T.さん ｜ 営業職 ｜ 入社3年目</p>
+          <p>ホテルで培ったホスピタリティが、クライアント対応で大きな強みになっています。お客様に寄り添う姿勢は業界が変わっても変わりません。今はサブリーダーとして後輩育成にも挑戦中です。</p>
+        </div>
+      </div>
+      <div class="km-interview-card">
+        <div class="km-interview-photo">&#128103;</div>
+        <div class="km-interview-body">
+          <span class="km-interview-tag">元Webデザイナー</span>
+          <h3>クリエイティブ力で差がつく</h3>
+          <p class="km-interview-meta">K.N.さん ｜ 事務職 ｜ 入社1年目</p>
+          <p>デザインの経験を活かして、見やすい提案資料や申請書類を作成しています。「書類の質が上がった」とクライアントから喜ばれることが、大きなやりがいです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 募集要項 ===== -->
+<section class="km-positions" id="positions">
+  <div class="km-container">
+    <div class="km-sh">
+      <div class="km-sh-en">OPEN POSITIONS</div>
+      <h2 class="km-sh-title">募集要項</h2>
+      <div class="km-sh-line"></div>
+    </div>
+    <div class="km-positions-grid">
+      <div class="km-position-card">
+        <div class="km-position-header">
+          <h3>営業職</h3>
+          <p>補助金 x AI の提案営業</p>
+        </div>
+        <div class="km-position-table">
+          <table>
+            <tr><th>雇用形態</th><td>正社員</td></tr>
+            <tr><th>給与</th><td>月給25万円〜40万円<br>（経験・能力による）</td></tr>
+            <tr><th>勤務地</th><td>東京本社 / リモートワーク可</td></tr>
+            <tr><th>勤務時間</th><td>フレックスタイム制<br>（コアタイム 10:00〜15:00）</td></tr>
+            <tr><th>休日</th><td>完全週休二日制（土日祝）<br>年間休日120日以上</td></tr>
+            <tr><th>応募資格</th><td>学歴不問・未経験歓迎<br>基本的なPC操作ができる方</td></tr>
+            <tr><th>待遇</th><td>社保完備 / 交通費全額支給 / 資格取得支援 / 書籍購入補助</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="km-position-card">
+        <div class="km-position-header">
+          <h3>事務職</h3>
+          <p>補助金申請のサポート業務</p>
+        </div>
+        <div class="km-position-table">
+          <table>
+            <tr><th>雇用形態</th><td>正社員</td></tr>
+            <tr><th>給与</th><td>月給22万円〜35万円<br>（経験・能力による）</td></tr>
+            <tr><th>勤務地</th><td>東京本社 / リモートワーク可</td></tr>
+            <tr><th>勤務時間</th><td>フレックスタイム制<br>（コアタイム 10:00〜15:00）</td></tr>
+            <tr><th>休日</th><td>完全週休二日制（土日祝）<br>年間休日120日以上</td></tr>
+            <tr><th>応募資格</th><td>学歴不問・未経験歓迎<br>基本的なPC操作ができる方</td></tr>
+            <tr><th>待遇</th><td>社保完備 / 交通費全額支給 / 資格取得支援 / 書籍購入補助</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="km-recruit-cta">
+  <div class="km-container">
+    <p class="km-recruit-cta-lead">応募を迷っている方へ</p>
+    <h2>「まずは話を聞いてみたい」でOK。</h2>
+    <p class="km-recruit-cta-sub">カジュアル面談では、仕事内容や社風について気軽にお話しできます。<br>少しでも興味があれば、お気軽にご連絡ください。</p>
+    <div class="km-recruit-cta-btns">
+      <a href="/contact/" class="km-btn km-btn--white km-btn--lg">エントリーする</a>
+      <a href="/contact/" class="km-btn km-btn--outline km-btn--lg" style="border-color:#fff;color:#fff;">カジュアル面談に申し込む</a>
+    </div>
+    <p class="km-recruit-cta-note">選考前のカジュアル面談も受付中。服装自由・オンライン対応。</p>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="km-footer">
+  <div class="km-footer-inner">
+    <div class="km-footer-brand">
+      <span class="km-logo">KMS<span>T</span></span>
+      <p>KMST株式会社<br>〒100-0001 東京都千代田区<br>TEL: 03-XXXX-XXXX</p>
+    </div>
+    <div class="km-footer-nav">
+      <h4>サービス</h4>
+      <a href="/service/">サービス一覧</a>
+      <a href="/pricing/">料金プラン</a>
+      <a href="/case/">導入実績</a>
+      <a href="/method/">メソッド</a>
+    </div>
+    <div class="km-footer-nav">
+      <h4>情報</h4>
+      <a href="/company/">会社概要</a>
+      <a href="/recruit/">採用情報</a>
+      <a href="#">ブログ</a>
+      <a href="#">お知らせ</a>
+    </div>
+    <div class="km-footer-nav">
+      <h4>サポート</h4>
+      <a href="/contact/">お問い合わせ</a>
+      <a href="#">よくある質問</a>
+      <a href="#">資料ダウンロード</a>
+    </div>
+  </div>
+  <div class="km-footer-bottom">
+    <p>&copy; 2025 KMST Inc. All Rights Reserved.</p>
+    <a href="/privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<!-- ===== モバイル固定CTA ===== -->
+<div class="km-fixed-cta">
+  <a href="/contact/" class="km-fc-primary">無料相談する</a>
+  <a href="tel:03XXXXXXXX" class="km-fc-secondary">電話する</a>
+</div>
+
+<!-- ===== JS ===== -->
+<script>
+(function() {
+  var hamburger = document.getElementById('js-hamburger');
+  var mobileNav = document.getElementById('js-mobile-nav');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+
+  // タブ切り替え
+  var tabs = document.querySelectorAll('.km-daily-tab');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      document.querySelectorAll('.km-daily-content').forEach(function(c) { c.classList.remove('active'); });
+      document.getElementById('tab-' + tab.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

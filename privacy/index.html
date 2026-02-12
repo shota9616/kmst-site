@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー | KMST株式会社</title>
+<meta name="description" content="KMST株式会社のプライバシーポリシー。お客様の個人情報の保護について。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.km-privacy { padding: 80px 0; background: #fff; }
+.km-privacy-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.km-privacy-inner h2 { font-size: 18px; font-weight: 700; color: #1A1A2E; margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #E53935; }
+.km-privacy-inner p, .km-privacy-inner ul { font-size: 14px; color: #6B6B6B; line-height: 2; }
+.km-privacy-inner ul { padding-left: 20px; list-style: disc; }
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="km-header">
+  <div class="km-header-inner">
+    <a href="/" class="km-logo">KM<span>ST</span></a>
+    <nav class="km-nav">
+      <a href="/service/">サービス</a>
+      <a href="/pricing/">料金</a>
+      <a href="/case/">実績</a>
+      <a href="/method/">メソッド</a>
+      <a href="/company/">会社概要</a>
+      <a href="/recruit/">採用</a>
+      <a href="/contact/" class="km-nav-cta">無料相談する</a>
+    </nav>
+    <div class="km-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+<div class="km-mobile-nav" id="mobileNav">
+  <a href="/service/">サービス</a>
+  <a href="/pricing/">料金</a>
+  <a href="/case/">実績</a>
+  <a href="/method/">メソッド</a>
+  <a href="/company/">会社概要</a>
+  <a href="/recruit/">採用</a>
+  <a href="/contact/" class="km-nav-cta">無料相談する</a>
+</div>
+
+<!-- ===== ヒーロー ===== -->
+<section class="km-sv-hero">
+  <p class="km-sv-hero-en">PRIVACY POLICY</p>
+  <h1>プライバシーポリシー</h1>
+</section>
+
+<!-- ===== プライバシーポリシー本文 ===== -->
+<section class="km-privacy">
+  <div class="km-privacy-inner">
+    <p>KMST株式会社（以下「当社」）は、お客様の個人情報の保護を重要な責務と考え、以下のとおりプライバシーポリシーを定めます。</p>
+
+    <h2>1. 個人情報の収集</h2>
+    <p>当社は、サービスの提供にあたり、氏名、メールアドレス、電話番号、会社名等の個人情報を収集することがあります。</p>
+
+    <h2>2. 個人情報の利用目的</h2>
+    <ul>
+      <li>補助金・助成金申請支援サービスの提供</li>
+      <li>AI導入コンサルティング・研修サービスの提供</li>
+      <li>お問い合わせへの回答</li>
+      <li>サービスに関する情報提供（メールマガジン等）</li>
+    </ul>
+
+    <h2>3. 個人情報の第三者提供</h2>
+    <p>当社は、法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。</p>
+
+    <h2>4. 個人情報の管理</h2>
+    <p>当社は、個人情報の漏洩・滅失・毀損の防止のため、適切な安全管理措置を講じます。</p>
+
+    <h2>5. お問い合わせ窓口</h2>
+    <p>個人情報に関するお問い合わせは、下記までご連絡ください。<br>
+    KMST株式会社<br>
+    メール：info@kmst.co.jp</p>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="km-footer">
+  <div class="km-footer-inner">
+    <div class="km-footer-brand">
+      <a href="/" class="km-logo">KM<span>ST</span></a>
+      <p>制度とテクノロジーで<br>中小企業の成果を作る。</p>
+    </div>
+    <div class="km-footer-nav">
+      <h4>サービス</h4>
+      <a href="/service/">サービス一覧</a>
+      <a href="/pricing/">料金</a>
+      <a href="/case/">実績</a>
+    </div>
+    <div class="km-footer-nav">
+      <h4>情報</h4>
+      <a href="/method/">メソッド</a>
+      <a href="/company/">会社概要</a>
+      <a href="/recruit/">採用</a>
+    </div>
+    <div class="km-footer-nav">
+      <h4>お問い合わせ</h4>
+      <a href="/contact/">無料相談</a>
+      <a href="/privacy/">プライバシーポリシー</a>
+    </div>
+  </div>
+  <div class="km-footer-bottom">
+    <span>&copy; 2025 KMST Inc. All rights reserved.</span>
+    <a href="/privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+<div class="km-fixed-cta">
+  <a href="/pricing/" class="km-fc-secondary">料金を見る</a>
+  <a href="/contact/" class="km-fc-primary">無料相談する</a>
+</div>
+
+<!-- ===== JS ===== -->
+<script>
+function toggleMenu() {
+  var hamburger = document.querySelector('.km-hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+  document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+}
+window.addEventListener('scroll', function() {
+  var header = document.querySelector('.km-header');
+  if (window.scrollY > 10) {
+    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
